@@ -1,0 +1,30 @@
+{
+  "flights": [
+    {
+      "id": "F101",
+      "destination": "London",
+      "price": 450,
+      "date": "2026-06-12"
+    },
+    {
+      "id": "F102",
+      "destination": "Tokyo",
+      "price": 850,
+      "date": "2026-07-05"
+    }
+  ],
+  "hotels": [
+    {
+      "id": "H201",
+      "name": "The Grand London",
+      "city": "London",
+      "price_per_night": 200
+    },
+    {
+      "id": "H202",
+      "name": "Shibuya Stay",
+      "city": "Tokyo",
+      "price_per_night": 150
+    }
+  ]
+}
