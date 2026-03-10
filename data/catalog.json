@@ -1,30 +1,37 @@
 {
+  "destinations": ["Tokyo", "London", "Toronto", "Dubai", "Amsterdam"],
   "flights": [
-    {
-      "id": "F101",
-      "destination": "London",
-      "price": 450,
-      "date": "2026-06-12"
-    },
-    {
-      "id": "F102",
-      "destination": "Tokyo",
-      "price": 850,
-      "date": "2026-07-05"
-    }
+    {"id": "F-TYO-01", "destination": "Tokyo", "price": 850, "date": "2026-07-05"},
+    {"id": "F-TYO-02", "destination": "Tokyo", "price": 920, "date": "2026-07-12"},
+    {"id": "F-TYO-03", "destination": "Tokyo", "price": 780, "date": "2026-07-19"},
+    {"id": "F-LON-01", "destination": "London", "price": 450, "date": "2026-06-12"},
+    {"id": "F-LON-02", "destination": "London", "price": 510, "date": "2026-06-18"},
+    {"id": "F-LON-03", "destination": "London", "price": 480, "date": "2026-06-25"},
+    {"id": "F-YYZ-01", "destination": "Toronto", "price": 300, "date": "2026-08-01"},
+    {"id": "F-YYZ-02", "destination": "Toronto", "price": 350, "date": "2026-08-08"},
+    {"id": "F-YYZ-03", "destination": "Toronto", "price": 320, "date": "2026-08-15"},
+    {"id": "F-DXB-01", "destination": "Dubai", "price": 1100, "date": "2026-11-05"},
+    {"id": "F-DXB-02", "destination": "Dubai", "price": 1250, "date": "2026-11-12"},
+    {"id": "F-DXB-03", "destination": "Dubai", "price": 980, "date": "2026-11-19"},
+    {"id": "F-AMS-01", "destination": "Amsterdam", "price": 600, "date": "2026-09-10"},
+    {"id": "F-AMS-02", "destination": "Amsterdam", "price": 650, "date": "2026-09-17"},
+    {"id": "F-AMS-03", "destination": "Amsterdam", "price": 580, "date": "2026-09-24"}
   ],
   "hotels": [
-    {
-      "id": "H201",
-      "name": "The Grand London",
-      "city": "London",
-      "price_per_night": 200
-    },
-    {
-      "id": "H202",
-      "name": "Shibuya Stay",
-      "city": "Tokyo",
-      "price_per_night": 150
-    }
+    {"id": "H-TYO-01", "name": "Shibuya Sky Hotel", "city": "Tokyo", "price": 150, "available_dates": ["2026-07-05", "2026-07-12", "2026-07-19"]},
+    {"id": "H-TYO-02", "name": "Akihabara Inn", "city": "Tokyo", "price": 110, "available_dates": ["2026-07-05", "2026-07-12", "2026-07-19"]},
+    {"id": "H-TYO-03", "name": "Imperial Palace Suites", "city": "Tokyo", "price": 350, "available_dates": ["2026-07-05", "2026-07-12", "2026-07-19"]},
+    {"id": "H-LON-01", "name": "The Grand London", "city": "London", "price": 220, "available_dates": ["2026-06-12", "2026-06-18", "2026-06-25"]},
+    {"id": "H-LON-02", "name": "Piccadilly Lodge", "city": "London", "price": 140, "available_dates": ["2026-06-12", "2026-06-18", "2026-06-25"]},
+    {"id": "H-LON-03", "name": "Thames View B&B", "city": "London", "price": 180, "available_dates": ["2026-06-12", "2026-06-18", "2026-06-25"]},
+    {"id": "H-YYZ-01", "name": "CN Tower View Hotel", "city": "Toronto", "price": 210, "available_dates": ["2026-08-01", "2026-08-08", "2026-08-15"]},
+    {"id": "H-YYZ-02", "name": "Distillery District Lofts", "city": "Toronto", "price": 175, "available_dates": ["2026-08-01", "2026-08-08", "2026-08-15"]},
+    {"id": "H-YYZ-03", "name": "Lakefront Suites", "city": "Toronto", "price": 190, "available_dates": ["2026-08-01", "2026-08-08", "2026-08-15"]},
+    {"id": "H-DXB-01", "name": "Burj Al Arab Luxury", "city": "Dubai", "price": 850, "available_dates": ["2026-11-05", "2026-11-12", "2026-11-19"]},
+    {"id": "H-DXB-02", "name": "Desert Oasis Resort", "city": "Dubai", "price": 400, "available_dates": ["2026-11-05", "2026-11-12", "2026-11-19"]},
+    {"id": "H-DXB-03", "name": "Marina Sands Hotel", "city": "Dubai", "price": 300, "available_dates": ["2026-11-05", "2026-11-12", "2026-11-19"]},
+    {"id": "H-AMS-01", "name": "Canal Side Boutique", "city": "Amsterdam", "price": 250, "available_dates": ["2026-09-10", "2026-09-17", "2026-09-24"]},
+    {"id": "H-AMS-02", "name": "Dam Square Inn", "city": "Amsterdam", "price": 180, "available_dates": ["2026-09-10", "2026-09-17", "2026-09-24"]},
+    {"id": "H-AMS-03", "name": "The Windmill Suites", "city": "Amsterdam", "price": 220, "available_dates": ["2026-09-10", "2026-09-17", "2026-09-24"]}
   ]
 }
