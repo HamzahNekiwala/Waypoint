@@ -1,5 +1,41 @@
 {
     "gibran": {
         "itinerary": []
+    },
+    "hamzahwala": {
+        "itinerary": []
+    },
+    "hamzah": {
+        "itinerary": [
+            {
+                "flight_id": "F-TYO-03",
+                "hotel_id": "H-TYO-02",
+                "destination": "Tokyo",
+                "date": "2026-07-19",
+                "total_price": 890
+            }
+        ]
+    },
+    "zaid": {
+        "itinerary": [
+            {
+                "flight_id": "F-TYO-03",
+                "hotel_id": "H-TYO-02",
+                "destination": "Tokyo",
+                "date": "2026-07-19",
+                "total_price": 890
+            }
+        ]
+    },
+    "sala": {
+        "itinerary": [
+            {
+                "flight_id": "F-TYO-03",
+                "hotel_id": "H-TYO-02",
+                "destination": "Tokyo",
+                "date": "2026-07-19",
+                "total_price": 890
+            }
+        ]
     }
 }
