@@ -1,4 +1,15 @@
 {
+    "ayan": {
+        "itinerary": [
+            {
+                "date": "2026-11-19",
+                "destination": "Dubai",
+                "flight_id": "F-DXB-03",
+                "hotel_id": "H-DXB-01",
+                "total_price": 1830
+            }
+        ]
+    },
     "gibran": {
         "itinerary": []
     },
