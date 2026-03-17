@@ -28,7 +28,7 @@
 ## 🚀 Getting Started
 
 ### Prerequisites
-* **Python 3.x**
+* **Python 3.3**
 * **Standard Libraries:** `json`, `os`, `csv`.
 
 ### Installation & Directory Setup
