@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Booking Choice</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></head>
+<body class="bg-dark text-white text-center py-5">
+<div class="container">
+    <h2 class="text-info mb-5">Planning trip to {{ destination }}</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-4 mb-3"><div class="card bg-secondary p-4 h-100"><p>✈️</p><h4>Flight First</h4><a href="/results/{{ username }}/{{ destination }}/flight" class="btn btn-info mt-auto">Go</a></div></div>
+        <div class="col-md-4 mb-3"><div class="card bg-secondary p-4 h-100"><p>🏨</p><h4>Hotel First</h4><a href="/results/{{ username }}/{{ destination }}/hotel" class="btn btn-warning mt-auto">Go</a></div></div>
+    </div>
+</div>
+</body>
+</html>

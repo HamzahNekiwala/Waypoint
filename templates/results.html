@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Results</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></head>
+<body class="bg-dark text-white py-5">
+<div class="container">
+    <h2 class="text-info mb-4">Available Options</h2>
+    <form action="/confirm-booking/{{ username }}" method="POST">
+        <div class="row">
+            {% if flow == 'flight' %}
+            <div class="col-md-6 border-end"><h4>1. Flight</h4>{% for f in flights %}<label class="card bg-secondary mb-2 p-3 w-100"><input type="radio" name="flight_id" value="{{ f.id }}" required class="me-2"> {{ f.id }} - ${{ f.price }}</label>{% endfor %}</div>
+            <div class="col-md-6"><h4>2. Hotel</h4>{% for h in hotels %}<label class="card bg-secondary mb-2 p-3 w-100"><input type="radio" name="hotel_id" value="{{ h.id }}" required class="me-2"> {{ h.name }}</label>{% endfor %}</div>
+            {% else %}
+            <div class="col-md-6 border-end"><h4>1. Hotel</h4>{% for h in hotels %}<label class="card bg-secondary mb-2 p-3 w-100"><input type="radio" name="hotel_id" value="{{ h.id }}" required class="me-2"> {{ h.name }}</label>{% endfor %}</div>
+            <div class="col-md-6"><h4>2. Flight</h4>{% for f in flights %}<label class="card bg-secondary mb-2 p-3 w-100"><input type="radio" name="flight_id" value="{{ f.id }}" required class="me-2"> {{ f.id }} - ${{ f.price }}</label>{% endfor %}</div>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn btn-success btn-lg w-100 mt-5">Finalize Booking</button>
+    </form>
+</div>
+</body>
+</html>
