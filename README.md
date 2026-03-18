@@ -53,7 +53,3 @@ Waypoint is designed to be intuitive. Follow these steps to plan your trip:
 4.  **Confirm Selection:** The app will present a list of available flights/hotels based on your priority. Select your preferred options by their index.
 5.  **View Your "Ticket":** Once selected, the system generates a summary "Ticket" showing your destination, flight ID, hotel ID, and total trip cost.
 6.  **Manage Itinerary:** At the end of the session, you can choose to view your **Past Catalog** to see all previously saved trips and itineraries.
-
----
-> [!TIP]
-> Always remember to save and exit properly to ensure your itinerary is written to the `users.json` file!
