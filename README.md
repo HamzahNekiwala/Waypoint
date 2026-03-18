@@ -4,7 +4,7 @@
 
 ---
 
-## 👥 The Team: Cache Me Outside
+## The Team: Cache Me Outside
 
 | Member | Role | Specific Task for Travel Planning Domain |
 | :--- | :--- | :--- |
@@ -16,7 +16,7 @@
 
 ---
 
-## ✨ Key Features (MVP)
+## Key Features (MVP)
 
 * **Persistent Authentication:** Users log in with a username to save their specific itinerary to a persistent JSON file.
 * **Dependent Search Logic:** A smart search system where flight choices automatically filter available hotel dates (and vice-versa) to ensure itinerary alignment.
@@ -25,7 +25,7 @@
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 * **Python 3.3**
@@ -41,7 +41,7 @@
 
 ---
 
-## 🛠 How It Works (Step-by-Step)
+## How It Works (Step-by-Step)
 
 Waypoint is designed to be intuitive. Follow these steps to plan your trip:
 
