@@ -148,6 +148,27 @@
                 "flight_id": "F-LON-03",
                 "hotel_id": "H-LON-01",
                 "total_price": 700
+            },
+            {
+                "date": "2026-11-05",
+                "destination": "Dubai",
+                "flight_id": "F-DXB-01",
+                "hotel_id": "H-DXB-01",
+                "total_price": 1950
+            },
+            {
+                "date": "2026-09-17",
+                "destination": "Amsterdam",
+                "flight_id": "F-AMS-02",
+                "hotel_id": "H-AMS-02",
+                "total_price": 830
+            },
+            {
+                "date": "2026-07-19",
+                "destination": "Tokyo",
+                "flight_id": "F-TYO-03",
+                "hotel_id": "H-TYO-01",
+                "total_price": 930
             }
         ]
     },
