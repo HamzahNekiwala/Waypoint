@@ -38,6 +38,17 @@
     "hamzahwala": {
         "itinerary": []
     },
+    "hyper": {
+        "itinerary": [
+            {
+                "date": "2026-06-18",
+                "destination": "London",
+                "flight_id": "F-LON-02",
+                "hotel_id": "H-LON-02",
+                "total_price": 650
+            }
+        ]
+    },
     "sala": {
         "itinerary": [
             {
@@ -123,6 +134,20 @@
                 "flight_id": "F-LON-02",
                 "hotel_id": "H-LON-01",
                 "total_price": 730
+            },
+            {
+                "date": "2026-06-18",
+                "destination": "London",
+                "flight_id": "F-LON-02",
+                "hotel_id": "H-LON-02",
+                "total_price": 650
+            },
+            {
+                "date": "2026-06-25",
+                "destination": "London",
+                "flight_id": "F-LON-03",
+                "hotel_id": "H-LON-01",
+                "total_price": 700
             }
         ]
     },

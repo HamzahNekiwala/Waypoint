@@ -20,7 +20,11 @@ def home():
 @app.route('/login', methods=['POST'])
 def login():
     username = request.form.get('username').lower().strip()
-    return redirect(url_for('book_home', username=username))
+    return redirect(url_for('what_next', username=username))
+
+@app.route('/next/<username>')
+def what_next(username):
+    return render_template('next.html', username=username)
 
 @app.route('/book/<username>')
 def book_home(username):

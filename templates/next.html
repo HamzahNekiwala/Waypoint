@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Waypoint | Welcome Back</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+          --gold: #C9A84C; --black: #0A0A0A; --surface: #111111;
+          --surface-2: #1A1A1A; --border: rgba(201,168,76,0.2); --text: #F0EDE6; --muted: #888880;
+        }
+        html, body { height: 100%; }
+        body { font-family: 'Montserrat', sans-serif; font-weight: 300; color: var(--text); }
+        .bg {
+          position: fixed; inset: 0;
+          background-image: url('https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1600&q=80');
+          background-size: cover; background-position: center;
+        }
+        .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.78); }
+        .page { position: relative; z-index: 2; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 2rem; text-align: center; }
+        .wordmark { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+        .greeting { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 7vw, 4.5rem); font-weight: 300; margin-bottom: 0.5rem; }
+        .greeting em { color: var(--gold); font-style: italic; }
+        .sub { font-size: 0.65rem; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; }
+        .divider { width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 2.5rem auto; }
+        .card { background: rgba(10,10,10,0.75); backdrop-filter: blur(12px); border: 1px solid var(--border); padding: 2.5rem; width: 100%; max-width: 420px; position: relative; }
+        .card::before { content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+        .card-question { font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--muted); margin-bottom: 2rem; }
+        .btn { display: block; width: 100%; text-align: center; padding: 0.95rem 1.5rem; font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; text-decoration: none; font-family: 'Montserrat', sans-serif; transition: background 0.3s, color 0.3s; border: 1px solid transparent; margin-bottom: 0.75rem; }
+        .btn:last-child { margin-bottom: 0; }
+        .btn-gold { border-color: var(--gold); color: var(--gold); }
+        .btn-gold:hover { background: var(--gold); color: var(--black); }
+        .btn-primary { background: var(--surface); border-color: var(--border); color: var(--text); }
+        .btn-primary:hover { border-color: var(--gold); }
+    </style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="overlay"></div>
+<div class="page">
+    <div class="wordmark">Waypoint</div>
+    <div class="greeting">Welcome back, <em>{{ username }}</em>.</div>
+    <div class="sub">Your next journey awaits</div>
+    <div class="divider"></div>
+    <div class="card">
+        <div class="card-question">What would you like to do?</div>
+        <a href="/itinerary/{{ username }}?history=true" class="btn btn-gold">View My Previous Trips</a>
+        <a href="/book/{{ username }}" class="btn btn-primary">Book a New Trip</a>
+    </div>
+</div>
+</body>
+</html>

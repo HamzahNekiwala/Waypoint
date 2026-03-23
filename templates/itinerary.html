@@ -27,16 +27,13 @@
         .trip-hero-dest { position: absolute; bottom: 1rem; left: 1.5rem; font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; color: #fff; }
 
         .trip-body { padding: 1.75rem 2rem; }
-
         .section-label { font-size: 0.55rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; margin-top: 1.25rem; }
         .detail-row { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0; border-bottom: 1px solid rgba(201,168,76,0.08); }
         .detail-row:last-of-type { border-bottom: none; }
         .detail-label { font-size: 0.72rem; color: var(--muted); }
         .detail-value { font-size: 0.78rem; color: var(--text); }
         .detail-price { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--text); }
-
         .divider { height: 1px; background: var(--border); margin: 1.25rem 0; }
-
         .breakdown { background: var(--surface-2); padding: 1rem 1.25rem; margin-top: 1.25rem; }
         .breakdown-row { display: flex; justify-content: space-between; padding: 0.4rem 0; font-size: 0.72rem; color: var(--muted); }
         .breakdown-row .val { color: var(--text); }
@@ -44,7 +41,9 @@
         .breakdown-total .label { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); }
         .breakdown-total .total-price { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #7EC8A4; }
 
-        .actions { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 3rem; }
+        /* Action section */
+        .actions-heading { font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; margin-top: 3rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+        .actions { display: flex; flex-direction: column; gap: 0.75rem; }
         .btn { display: block; text-align: center; padding: 0.85rem 1.5rem; font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; text-decoration: none; font-family: 'Montserrat', sans-serif; transition: background 0.3s, color 0.3s; border: 1px solid transparent; }
         .btn-gold { border-color: var(--gold); color: var(--gold); }
         .btn-gold:hover { background: var(--gold); color: var(--black); }
@@ -52,6 +51,15 @@
         .btn-primary:hover { border-color: var(--gold); }
         .btn-muted { color: var(--muted); font-size: 0.55rem; }
         .btn-muted:hover { color: var(--text); }
+
+        /* Confirm modal overlay */
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 100; align-items: center; justify-content: center; }
+        .modal-overlay.active { display: flex; }
+        .modal { background: var(--surface); border: 1px solid var(--border); padding: 2.5rem; max-width: 380px; width: 100%; position: relative; text-align: center; }
+        .modal::before { content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+        .modal-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; margin-bottom: 0.75rem; }
+        .modal-sub { font-size: 0.65rem; color: var(--muted); letter-spacing: 0.05em; line-height: 1.7; margin-bottom: 2rem; }
+        .modal-actions { display: flex; flex-direction: column; gap: 0.75rem; }
     </style>
 </head>
 <body>
@@ -62,6 +70,7 @@
 'Dubai': 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80',
 'Amsterdam': 'https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?w=800&q=80'
 } %}
+
 <div class="container">
     <div class="eyebrow">{{ "Travel History" if is_history else "Recent Booking" }}</div>
     <h2>{{ "Your Journeys" if is_history else "Your Booking" }}</h2>
@@ -78,13 +87,10 @@
             <div class="detail-row"><span class="detail-label">Flight ID</span><span class="detail-value">{{ trip.flight_id }}</span></div>
             <div class="detail-row"><span class="detail-label">Date</span><span class="detail-value">{{ trip.date }}</span></div>
             <div class="detail-row"><span class="detail-label">Flight Cost</span><span class="detail-price">${{ trip.flight_price }}</span></div>
-
             <div class="divider"></div>
-
             <div class="section-label">🏨 &nbsp; Hotel</div>
             <div class="detail-row"><span class="detail-label">Hotel</span><span class="detail-value">{{ trip.hotel_name }}</span></div>
             <div class="detail-row"><span class="detail-label">Hotel Cost</span><span class="detail-price">${{ trip.hotel_price }}</span></div>
-
             <div class="breakdown">
                 <div class="breakdown-row"><span>Flight</span><span class="val">${{ trip.flight_price }}</span></div>
                 <div class="breakdown-row"><span>Hotel</span><span class="val">${{ trip.hotel_price }}</span></div>
@@ -97,15 +103,30 @@
     </div>
     {% endfor %}
 
+    <div class="actions-heading">What would you like to do next?</div>
     <div class="actions">
         {% if not is_history %}
-        <a href="/itinerary/{{ username }}?history=true" class="btn btn-gold">View Full History</a>
+        <a href="/itinerary/{{ username }}?history=true" class="btn btn-gold">View Previous Trips</a>
         {% else %}
         <a href="/itinerary/{{ username }}" class="btn btn-gold">Show Latest Only</a>
         {% endif %}
-        <a href="/book/{{ username }}" class="btn btn-primary">Book New Trip</a>
+        <a href="#" class="btn btn-primary" onclick="document.getElementById('bookModal').classList.add('active'); return false;">Book a New Trip</a>
         <a href="/" class="btn btn-muted">Logout</a>
     </div>
 </div>
+
+<!-- Confirmation modal before booking -->
+<div class="modal-overlay" id="bookModal">
+    <div class="modal">
+        <div class="modal-title">Ready to Explore?</div>
+        <div class="modal-sub">Have you reviewed your previous trips? You can always go back to view your history before booking something new.</div>
+        <div class="modal-actions">
+            <a href="/book/{{ username }}" class="btn btn-gold">Yes, Book a New Trip</a>
+            <a href="/itinerary/{{ username }}?history=true" class="btn btn-primary">View My Trip History First</a>
+            <a href="#" class="btn btn-muted" onclick="document.getElementById('bookModal').classList.remove('active'); return false;">Cancel</a>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
