@@ -1,12 +1,71 @@
 <!DOCTYPE html>
-<html>
-<head><title>Booking Choice</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></head>
-<body class="bg-dark text-white text-center py-5">
-<div class="container">
-    <h2 class="text-info mb-5">Planning trip to {{ destination }}</h2>
-    <div class="row justify-content-center">
-        <div class="col-md-4 mb-3"><div class="card bg-secondary p-4 h-100"><p>✈️</p><h4>Flight First</h4><a href="/results/{{ username }}/{{ destination }}/flight" class="btn btn-info mt-auto">Go</a></div></div>
-        <div class="col-md-4 mb-3"><div class="card bg-secondary p-4 h-100"><p>🏨</p><h4>Hotel First</h4><a href="/results/{{ username }}/{{ destination }}/hotel" class="btn btn-warning mt-auto">Go</a></div></div>
+<html lang="en">
+<head>
+    <title>Waypoint | Plan Your Trip</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+          --gold: #C9A84C; --black: #0A0A0A; --surface: #111111;
+          --surface-2: #1A1A1A; --border: rgba(201,168,76,0.2); --text: #F0EDE6; --muted: #888880;
+        }
+        html, body { height: 100%; }
+        body { font-family: 'Montserrat', sans-serif; font-weight: 300; color: var(--text); }
+
+        {% set bg_images = {
+          'Tokyo': 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1600&q=80',
+          'London': 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1600&q=80',
+          'Toronto': 'https://images.unsplash.com/photo-1517090504586-fde19ea6066f?w=1600&q=80',
+          'Dubai': 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&q=80',
+          'Amsterdam': 'https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?w=1600&q=80'
+        } %}
+
+        .bg {
+          position: fixed; inset: 0;
+          background-image: url('{{ bg_images.get(destination, "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1600&q=80") }}');
+          background-size: cover; background-position: center;
+        }
+        .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.72); }
+
+        .page { position: relative; z-index: 2; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 2rem; }
+
+        .eyebrow { font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; text-align: center; }
+        h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 300; text-align: center; margin-bottom: 0.5rem; }
+        .divider { width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 2rem auto 3rem; }
+
+        .choices { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+        .choice-card { background: rgba(10,10,10,0.7); backdrop-filter: blur(10px); border: 1px solid var(--border); padding: 3rem 2.5rem; width: 240px; text-align: center; position: relative; transition: border-color 0.3s; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+        .choice-card:hover { border-color: var(--gold); }
+        .choice-card::before { content: ''; position: absolute; top: 0; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+        .icon { font-size: 2rem; }
+        .choice-label { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; }
+        .choice-sub { font-size: 0.6rem; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; }
+        .btn-gold { margin-top: 1rem; display: inline-block; border: 1px solid var(--gold); color: var(--gold); padding: 0.7rem 2rem; font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; text-decoration: none; transition: background 0.3s, color 0.3s; font-family: 'Montserrat', sans-serif; }
+        .btn-gold:hover { background: var(--gold); color: var(--black); }
+    </style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="overlay"></div>
+<div class="page">
+    <div class="eyebrow">Planning Trip To</div>
+    <h2>{{ destination }}</h2>
+    <div class="divider"></div>
+    <div class="choices">
+        <div class="choice-card">
+            <div class="icon">✈️</div>
+            <div class="choice-label">Flight First</div>
+            <div class="choice-sub">Select your flight, then hotel</div>
+            <a href="/results/{{ username }}/{{ destination }}/flight" class="btn-gold">Begin</a>
+        </div>
+        <div class="choice-card">
+            <div class="icon">🏨</div>
+            <div class="choice-label">Hotel First</div>
+            <div class="choice-sub">Select your hotel, then flight</div>
+            <a href="/results/{{ username }}/{{ destination }}/hotel" class="btn-gold">Begin</a>
+        </div>
     </div>
 </div>
 </body>

@@ -1,17 +1,61 @@
 <!DOCTYPE html>
-<html>
-<head><title>Destinations</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></head>
-<body class="bg-dark text-white py-5">
-<div class="container text-center">
-    <h2 class="text-info mb-5">Where to, {{ username }}?</h2>
-    <div class="row">
+<html lang="en">
+<head>
+    <title>Waypoint | Destinations</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+          --gold: #C9A84C; --black: #0A0A0A; --surface: #111111;
+          --surface-2: #1A1A1A; --border: rgba(201,168,76,0.2); --text: #F0EDE6; --muted: #888880;
+        }
+        body { background: var(--black); color: var(--text); font-family: 'Montserrat', sans-serif; font-weight: 300; min-height: 100vh; padding: 4rem 2rem;
+          background-image: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,168,76,0.05) 0%, transparent 70%);
+        }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .eyebrow { font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+        h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 300; margin-bottom: 3.5rem; }
+        h2 span { color: var(--gold); font-style: italic; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+
+        .dest-card { position: relative; overflow: hidden; height: 360px; cursor: pointer; border: 1px solid var(--border); transition: border-color 0.3s; }
+        .dest-card:hover { border-color: var(--gold); }
+        .dest-card:hover .dest-img { transform: scale(1.05); }
+        .dest-card:hover .dest-overlay { background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 60%, transparent 100%); }
+
+        .dest-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .dest-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 50%, transparent 100%); transition: background 0.3s; }
+
+        .dest-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.75rem; }
+        .dest-number { font-size: 0.5rem; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.4rem; }
+        .dest-name { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; margin-bottom: 1rem; }
+        .btn-outline { display: inline-block; border: 1px solid var(--gold); color: var(--gold); padding: 0.6rem 1.25rem; font-size: 0.55rem; letter-spacing: 0.35em; text-transform: uppercase; text-decoration: none; transition: background 0.3s, color 0.3s; font-family: 'Montserrat', sans-serif; }
+        .btn-outline:hover { background: var(--gold); color: var(--black); }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="eyebrow">Select Destination</div>
+    <h2>Where to, <span>{{ username }}</span>?</h2>
+    <div class="grid">
+        {% set images = {
+        'Tokyo': 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80',
+        'London': 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80',
+        'Toronto': 'https://images.unsplash.com/photo-1517090504586-fde19ea6066f?w=800&q=80',
+        'Dubai': 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80',
+        'Amsterdam': 'https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?w=800&q=80'
+        } %}
         {% for dest in catalog.destinations %}
-        <div class="col-md-4 mb-4">
-            <div class="card bg-secondary text-white border-0 shadow">
-                <div class="card-body py-4">
-                    <h3>{{ dest }}</h3>
-                    <a href="/search/{{ username }}/{{ dest }}" class="btn btn-info mt-3 fw-bold">Select</a>
-                </div>
+        <div class="dest-card">
+            <img class="dest-img" src="{{ images.get(dest, 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=800&q=80') }}" alt="{{ dest }}">
+            <div class="dest-overlay"></div>
+            <div class="dest-content">
+                <div class="dest-number">Destination {{ loop.index }}</div>
+                <div class="dest-name">{{ dest }}</div>
+                <a href="/search/{{ username }}/{{ dest }}" class="btn-outline">Select</a>
             </div>
         </div>
         {% endfor %}

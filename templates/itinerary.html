@@ -1,22 +1,110 @@
 <!DOCTYPE html>
-<html>
-<head><title>My Itinerary</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></head>
-<body class="bg-dark text-white py-5">
-<div class="container" style="max-width: 600px;">
-    <h2 class="text-info text-center mb-4">{% if is_history %}📜 History{% else %}✅ Recent Booking{% endif %}</h2>
+<html lang="en">
+<head>
+    <title>Waypoint | Itinerary</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+          --gold: #C9A84C; --black: #0A0A0A; --surface: #111111;
+          --surface-2: #1A1A1A; --border: rgba(201,168,76,0.2); --text: #F0EDE6; --muted: #888880;
+        }
+        body { background: var(--black); color: var(--text); font-family: 'Montserrat', sans-serif; font-weight: 300; min-height: 100vh; padding: 4rem 2rem;
+          background-image: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,168,76,0.05) 0%, transparent 70%);
+        }
+        .container { max-width: 680px; margin: 0 auto; }
+        .eyebrow { font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+        h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 300; margin-bottom: 3rem; }
+
+        .trip-card { background: var(--surface); border: 1px solid var(--border); margin-bottom: 1.5rem; position: relative; overflow: hidden; }
+        .trip-card::before { content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); z-index: 1; }
+
+        .trip-hero { position: relative; height: 180px; overflow: hidden; }
+        .trip-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .trip-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%); }
+        .trip-hero-dest { position: absolute; bottom: 1rem; left: 1.5rem; font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; color: #fff; }
+
+        .trip-body { padding: 1.75rem 2rem; }
+
+        .section-label { font-size: 0.55rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; margin-top: 1.25rem; }
+        .detail-row { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0; border-bottom: 1px solid rgba(201,168,76,0.08); }
+        .detail-row:last-of-type { border-bottom: none; }
+        .detail-label { font-size: 0.72rem; color: var(--muted); }
+        .detail-value { font-size: 0.78rem; color: var(--text); }
+        .detail-price { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--text); }
+
+        .divider { height: 1px; background: var(--border); margin: 1.25rem 0; }
+
+        .breakdown { background: var(--surface-2); padding: 1rem 1.25rem; margin-top: 1.25rem; }
+        .breakdown-row { display: flex; justify-content: space-between; padding: 0.4rem 0; font-size: 0.72rem; color: var(--muted); }
+        .breakdown-row .val { color: var(--text); }
+        .breakdown-total { display: flex; justify-content: space-between; align-items: center; padding-top: 0.75rem; margin-top: 0.5rem; border-top: 1px solid var(--border); }
+        .breakdown-total .label { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); }
+        .breakdown-total .total-price { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #7EC8A4; }
+
+        .actions { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 3rem; }
+        .btn { display: block; text-align: center; padding: 0.85rem 1.5rem; font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; text-decoration: none; font-family: 'Montserrat', sans-serif; transition: background 0.3s, color 0.3s; border: 1px solid transparent; }
+        .btn-gold { border-color: var(--gold); color: var(--gold); }
+        .btn-gold:hover { background: var(--gold); color: var(--black); }
+        .btn-primary { background: var(--surface); border-color: var(--border); color: var(--text); }
+        .btn-primary:hover { border-color: var(--gold); }
+        .btn-muted { color: var(--muted); font-size: 0.55rem; }
+        .btn-muted:hover { color: var(--text); }
+    </style>
+</head>
+<body>
+{% set images = {
+'Tokyo': 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80',
+'London': 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80',
+'Toronto': 'https://images.unsplash.com/photo-1517090504586-fde19ea6066f?w=800&q=80',
+'Dubai': 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80',
+'Amsterdam': 'https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?w=800&q=80'
+} %}
+<div class="container">
+    <div class="eyebrow">{{ "Travel History" if is_history else "Recent Booking" }}</div>
+    <h2>{{ "Your Journeys" if is_history else "Your Booking" }}</h2>
+
     {% for trip in bookings %}
-    <div class="card bg-secondary mb-4 border-0 shadow">
-        <div class="card-body p-4">
-            <h3 class="text-info">{{ trip.destination }}</h3>
-            <p>🏨 Hotel: {{ trip.hotel_name }}<br>✈️ Flight: {{ trip.flight_id }}<br>📅 Date: {{ trip.date }}</p>
-            <h4 class="text-success">${{ trip.total_price }}</h4>
+    <div class="trip-card">
+        <div class="trip-hero">
+            <img src="{{ images.get(trip.destination, 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=800&q=80') }}" alt="{{ trip.destination }}">
+            <div class="trip-hero-overlay"></div>
+            <div class="trip-hero-dest">{{ trip.destination }}</div>
+        </div>
+        <div class="trip-body">
+            <div class="section-label">✈️ &nbsp; Flight</div>
+            <div class="detail-row"><span class="detail-label">Flight ID</span><span class="detail-value">{{ trip.flight_id }}</span></div>
+            <div class="detail-row"><span class="detail-label">Date</span><span class="detail-value">{{ trip.date }}</span></div>
+            <div class="detail-row"><span class="detail-label">Flight Cost</span><span class="detail-price">${{ trip.flight_price }}</span></div>
+
+            <div class="divider"></div>
+
+            <div class="section-label">🏨 &nbsp; Hotel</div>
+            <div class="detail-row"><span class="detail-label">Hotel</span><span class="detail-value">{{ trip.hotel_name }}</span></div>
+            <div class="detail-row"><span class="detail-label">Hotel Cost</span><span class="detail-price">${{ trip.hotel_price }}</span></div>
+
+            <div class="breakdown">
+                <div class="breakdown-row"><span>Flight</span><span class="val">${{ trip.flight_price }}</span></div>
+                <div class="breakdown-row"><span>Hotel</span><span class="val">${{ trip.hotel_price }}</span></div>
+                <div class="breakdown-total">
+                    <span class="label">Total</span>
+                    <span class="total-price">${{ trip.total_price }}</span>
+                </div>
+            </div>
         </div>
     </div>
     {% endfor %}
-    <div class="d-grid gap-2 mt-5">
-        {% if not is_history %}<a href="/itinerary/{{ username }}?history=true" class="btn btn-outline-info">View All History</a>{% else %}<a href="/itinerary/{{ username }}" class="btn btn-outline-info">Show Latest Only</a>{% endif %}
+
+    <div class="actions">
+        {% if not is_history %}
+        <a href="/itinerary/{{ username }}?history=true" class="btn btn-gold">View Full History</a>
+        {% else %}
+        <a href="/itinerary/{{ username }}" class="btn btn-gold">Show Latest Only</a>
+        {% endif %}
         <a href="/book/{{ username }}" class="btn btn-primary">Book New Trip</a>
-        <a href="/" class="btn btn-link text-secondary">Logout</a>
+        <a href="/" class="btn btn-muted">Logout</a>
     </div>
 </div>
 </body>

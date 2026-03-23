@@ -10,6 +10,17 @@
             }
         ]
     },
+    "dronehustlerdad": {
+        "itinerary": [
+            {
+                "date": "2026-07-05",
+                "destination": "Tokyo",
+                "flight_id": "F-TYO-01",
+                "hotel_id": "H-TYO-01",
+                "total_price": 1000
+            }
+        ]
+    },
     "gibran": {
         "itinerary": []
     },
@@ -77,6 +88,41 @@
                 "flight_id": "F-DXB-02",
                 "hotel_id": "H-DXB-03",
                 "total_price": 1550
+            },
+            {
+                "date": "2026-06-12",
+                "destination": "London",
+                "flight_id": "F-LON-01",
+                "hotel_id": "H-LON-02",
+                "total_price": 590
+            },
+            {
+                "date": "2026-06-18",
+                "destination": "London",
+                "flight_id": "F-LON-02",
+                "hotel_id": "H-LON-01",
+                "total_price": 730
+            },
+            {
+                "date": "2026-06-18",
+                "destination": "London",
+                "flight_id": "F-LON-02",
+                "hotel_id": "H-LON-02",
+                "total_price": 650
+            },
+            {
+                "date": "2026-06-18",
+                "destination": "London",
+                "flight_id": "F-LON-02",
+                "hotel_id": "H-LON-01",
+                "total_price": 730
+            },
+            {
+                "date": "2026-06-18",
+                "destination": "London",
+                "flight_id": "F-LON-02",
+                "hotel_id": "H-LON-01",
+                "total_price": 730
             }
         ]
     },

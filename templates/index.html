@@ -1,14 +1,65 @@
 <!DOCTYPE html>
-<html>
-<head><title>Waypoint | Welcome</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></head>
-<body class="bg-dark text-white text-center py-5">
-<div class="container">
-    <h1 class="display-1 fw-bold text-info">WAYPOINT</h1>
-    <div class="card bg-secondary mx-auto mt-5 p-4" style="max-width: 400px; border: none;">
+<html lang="en">
+<head>
+    <title>Waypoint | Welcome</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+          --gold: #C9A84C; --black: #0A0A0A; --surface: #111111;
+          --surface-2: #1A1A1A; --border: rgba(201,168,76,0.2); --text: #F0EDE6; --muted: #888880;
+        }
+        html, body { height: 100%; }
+        body { font-family: 'Montserrat', sans-serif; font-weight: 300; color: var(--text); overflow: hidden; }
+
+        .bg {
+          position: fixed; inset: 0;
+          background-image: url('https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1600&q=80');
+          background-size: cover; background-position: center;
+        }
+        .overlay {
+          position: fixed; inset: 0;
+          background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 100%);
+        }
+
+        .page {
+          position: relative; z-index: 2;
+          height: 100vh; display: flex; flex-direction: column;
+          align-items: center; justify-content: center; padding: 2rem;
+        }
+
+        .wordmark { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 12vw, 7rem); font-weight: 300; letter-spacing: 0.35em; text-transform: uppercase; animation: fadeDown 1s ease both; }
+        .tagline { font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-top: 0.4rem; animation: fadeDown 1s 0.15s ease both; }
+        .divider { width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 1.5rem auto 2.5rem; }
+
+        .card { background: rgba(10,10,10,0.75); backdrop-filter: blur(12px); border: 1px solid var(--border); padding: 2.5rem; width: 100%; max-width: 380px; position: relative; animation: fadeUp 1s 0.3s ease both; }
+        .card::before { content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+        label { display: block; font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.9rem; }
+        input[type="text"] { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text); padding: 0.85rem 1rem; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 300; letter-spacing: 0.1em; outline: none; transition: border-color 0.3s; margin-bottom: 1.5rem; }
+        input[type="text"]:focus { border-color: var(--gold); }
+        input::placeholder { color: var(--muted); }
+        .btn-gold { width: 100%; background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 0.85rem; font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; cursor: pointer; transition: background 0.3s, color 0.3s; }
+        .btn-gold:hover { background: var(--gold); color: var(--black); }
+
+        @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: none; } }
+        @keyframes fadeUp   { from { opacity: 0; transform: translateY(16px);  } to { opacity: 1; transform: none; } }
+    </style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="overlay"></div>
+<div class="page">
+    <div class="wordmark">Waypoint</div>
+    <div class="tagline">Private Travel, Perfected</div>
+    <div class="divider"></div>
+    <div class="card">
         <form action="/login" method="POST">
-            <label class="mb-2">Enter Username to Begin</label>
-            <input type="text" name="username" class="form-control text-center mb-3" placeholder="sala" required>
-            <button type="submit" class="btn btn-info w-100 fw-bold">Login</button>
+            <label>Enter Username to Begin</label>
+            <input type="text" name="username" placeholder="your name" required>
+            <button type="submit" class="btn-gold">Continue</button>
         </form>
     </div>
 </div>

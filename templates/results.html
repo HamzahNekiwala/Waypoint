@@ -1,20 +1,90 @@
 <!DOCTYPE html>
-<html>
-<head><title>Results</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></head>
-<body class="bg-dark text-white py-5">
+<html lang="en">
+<head>
+    <title>Waypoint | {{ "Select Flight" if step == "flight" else "Select Hotel" }}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+          --gold: #C9A84C; --black: #0A0A0A; --surface: #111111; --surface-2: #1A1A1A;
+          --border: rgba(201,168,76,0.2); --text: #F0EDE6; --muted: #888880;
+        }
+        body { background: var(--black); color: var(--text); font-family: 'Montserrat', sans-serif; font-weight: 300; min-height: 100vh; padding: 4rem 2rem;
+          background-image: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,168,76,0.05) 0%, transparent 70%);
+        }
+        .container { max-width: 580px; margin: 0 auto; }
+        .eyebrow { font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+        h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 300; margin-bottom: 0.5rem; }
+        .sub { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.05em; margin-bottom: 2.5rem; }
+        .col-title { font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+        .option-label { display: flex; align-items: center; gap: 0.75rem; background: var(--surface); border: 1px solid var(--border); padding: 1rem 1.25rem; margin-bottom: 0.75rem; cursor: pointer; transition: border-color 0.2s; }
+        .option-label:hover { border-color: var(--gold); }
+        .option-label input[type="radio"] { accent-color: var(--gold); width: 14px; height: 14px; flex-shrink: 0; }
+        .option-info { display: flex; flex-direction: column; gap: 0.25rem; }
+        .option-text { font-size: 0.8rem; letter-spacing: 0.05em; }
+        .option-date { font-size: 0.65rem; color: var(--muted); letter-spacing: 0.05em; }
+        .option-price { margin-left: auto; font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--gold); white-space: nowrap; }
+        .btn-finalize { width: 100%; background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 1rem; font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; cursor: pointer; transition: background 0.3s, color 0.3s; margin-top: 2rem; }
+        .btn-finalize:hover { background: var(--gold); color: var(--black); }
+        .progress { display: flex; gap: 0.5rem; margin-bottom: 3rem; }
+        .progress-step { flex: 1; height: 2px; background: var(--surface-2); }
+        .progress-step.active { background: var(--gold); }
+    </style>
+</head>
+<body>
 <div class="container">
-    <h2 class="text-info mb-4">Available Options</h2>
-    <form action="/confirm-booking/{{ username }}" method="POST">
-        <div class="row">
-            {% if flow == 'flight' %}
-            <div class="col-md-6 border-end"><h4>1. Flight</h4>{% for f in flights %}<label class="card bg-secondary mb-2 p-3 w-100"><input type="radio" name="flight_id" value="{{ f.id }}" required class="me-2"> {{ f.id }} - ${{ f.price }}</label>{% endfor %}</div>
-            <div class="col-md-6"><h4>2. Hotel</h4>{% for h in hotels %}<label class="card bg-secondary mb-2 p-3 w-100"><input type="radio" name="hotel_id" value="{{ h.id }}" required class="me-2"> {{ h.name }}</label>{% endfor %}</div>
-            {% else %}
-            <div class="col-md-6 border-end"><h4>1. Hotel</h4>{% for h in hotels %}<label class="card bg-secondary mb-2 p-3 w-100"><input type="radio" name="hotel_id" value="{{ h.id }}" required class="me-2"> {{ h.name }}</label>{% endfor %}</div>
-            <div class="col-md-6"><h4>2. Flight</h4>{% for f in flights %}<label class="card bg-secondary mb-2 p-3 w-100"><input type="radio" name="flight_id" value="{{ f.id }}" required class="me-2"> {{ f.id }} - ${{ f.price }}</label>{% endfor %}</div>
-            {% endif %}
-        </div>
-        <button type="submit" class="btn btn-success btn-lg w-100 mt-5">Finalize Booking</button>
+
+    <div class="progress">
+        <div class="progress-step active"></div>
+        <div class="progress-step {{ 'active' if step != flow else '' }}"></div>
+    </div>
+
+    <div class="eyebrow">{{ destination }} &nbsp;·&nbsp; Step {{ "1" if step == flow else "2" }} of 2</div>
+    <h2>{{ "Choose Your Flight" if step == "flight" else "Choose Your Hotel" }}</h2>
+    <p class="sub">{{ "Select a flight to continue." if step == "flight" else "Select a hotel to continue." }}</p>
+
+    <form method="POST" action="/results/{{ username }}/{{ destination }}/{{ flow }}/{{ step }}">
+
+        {% if prev_flight_id %}
+        <input type="hidden" name="flight_id" value="{{ prev_flight_id }}">
+        {% endif %}
+        {% if prev_hotel_id %}
+        <input type="hidden" name="hotel_id" value="{{ prev_hotel_id }}">
+        {% endif %}
+
+        {% if step == "flight" %}
+        <div class="col-title">Available Flights</div>
+        {% for f in flights %}
+        <label class="option-label">
+            <input type="radio" name="flight_id" value="{{ f.id }}" required>
+            <div class="option-info">
+                <span class="option-text">{{ f.id }}</span>
+                <span class="option-date">{{ f.date }}</span>
+            </div>
+            <span class="option-price">${{ f.price }}</span>
+        </label>
+        {% endfor %}
+
+        {% else %}
+        <div class="col-title">Available Hotels</div>
+        {% for h in hotels %}
+        <label class="option-label">
+            <input type="radio" name="hotel_id" value="{{ h.id }}" required>
+            <div class="option-info">
+                <span class="option-text">{{ h.name }}</span>
+                <span class="option-date">{{ h.available_dates | join(', ') }}</span>
+            </div>
+            <span class="option-price">${{ h.price }}/night</span>
+        </label>
+        {% endfor %}
+        {% endif %}
+
+        <button type="submit" class="btn-finalize">
+            {{ "Next — Choose Hotel" if step == "flight" and flow == "flight" else "Next — Choose Flight" if step == "hotel" and flow == "hotel" else "Finalize Booking" }}
+        </button>
+
     </form>
 </div>
 </body>
