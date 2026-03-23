@@ -113,5 +113,17 @@ def show_itinerary(username):
     display_trips = itinerary if show_history else ([itinerary[-1]] if itinerary else [])
     return render_template('itinerary.html', username=username, bookings=display_trips, is_history=show_history)
 
+@app.route('/cancel/<username>', methods=['POST'])
+def cancel_last_trip(username):
+    try:
+        users = load_data('users.json')
+        if username in users and users[username]['itinerary']:
+            users[username]['itinerary'].pop() 
+            save_data('users.json', users)
+            return True
+        return False
+    except Exception:
+        return False
+
 if __name__ == '__main__':
     app.run(debug=True)
