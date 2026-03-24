@@ -73,6 +73,7 @@ def show_results_step2(username, dest, flow, step):
         prev_hotel_id=prev_hotel_id
     )
 
+
 def confirm_booking_direct(username, flight_id, hotel_id):
     users = load_data('users.json')
     catalog = load_data('catalog.json')

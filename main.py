@@ -45,7 +45,7 @@ def login_system():
     with open('data/users.json', 'r') as f:
         users = json.load(f)
 
-
+    #Login Page
     print("--- WAYPOINT LOGIN ---")
     username = input("Enter username: ").lower().strip()
    
@@ -69,6 +69,7 @@ def dependent_search(data, username):
         print("Invalid destination.")
         return
 
+    #Tell User How They Want To Book (Flight First or Hotel First)
     print("\nHow would you like to start your booking?")
     print("1. Choose Flight First")
     print("2. Choose Hotel First")
@@ -86,11 +87,13 @@ def dependent_search(data, username):
         f_idx = int(input("Select flight index: "))
         selected_flight = flights[f_idx]
         
+        #select hotel index based on flight availability
         matching_hotels = [h for h in data['hotels'] if h['city'] == dest and selected_flight['date'] in h['available_dates']]
         print(f"\nHotels in {dest} available on {selected_flight['date']}:")
         for i, h in enumerate(matching_hotels):
             print(f"[{i}] {h['name']}: ${h['price']}/night")
         
+        #Select hotel index
         h_idx = int(input("Select hotel index: "))
         selected_hotel = matching_hotels[h_idx]
 
@@ -103,6 +106,7 @@ def dependent_search(data, username):
         h_idx = int(input("Select hotel index: "))
         selected_hotel = hotels[h_idx]
         
+        #Select flight index based on hotel availability
         matching_flights = [f for f in data['flights'] if f['destination'] == dest and f['date'] in selected_hotel['available_dates']]
         print(f"\nFlights to {dest} landing on available hotel dates:")
         for i, f in enumerate(matching_flights):
@@ -126,7 +130,7 @@ def dependent_search(data, username):
     else:
         print("Booking discarded.")
 
-
+#Main page Login 
 def main():
     print("Welcome to Waypoint - Your Central Travel Hub\n")
    
