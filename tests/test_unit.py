@@ -1,3 +1,6 @@
+# python -m unittest discover tests
+# py -m unittest discover tests
+
 import unittest
 from unittest.mock import patch, mock_open
 import app
