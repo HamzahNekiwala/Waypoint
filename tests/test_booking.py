@@ -16,8 +16,6 @@ except ImportError:
 
 #Test DataManager (Loads Hotels and Flights)
 class TestDataManager(unittest.TestCase):
-    
-
     @patch('builtins.open', new_callable=mock_open, read_data='{"flights": [], "hotels": []}')
     def test_load_data(self, mock_file):
         """Tests the load_data method from app.py"""
