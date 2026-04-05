@@ -40,6 +40,7 @@
         .breakdown-total { display: flex; justify-content: space-between; align-items: center; padding-top: 0.75rem; margin-top: 0.5rem; border-top: 1px solid var(--border); }
         .breakdown-total .label { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); }
         .breakdown-total .total-price { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #7EC8A4; }
+        .empty-message { color: var(--muted); font-size: 0.95rem; margin: 2rem 0; }
 
         /* Action section */
         .actions-heading { font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; margin-top: 3rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
@@ -75,6 +76,7 @@
     <div class="eyebrow">{{ "Travel History" if is_history else "Recent Booking" }}</div>
     <h2>{{ "Your Journeys" if is_history else "Your Booking" }}</h2>
 
+    {% if bookings %}
     {% for trip in bookings %}
     <div class="trip-card">
         <div class="trip-hero">
@@ -98,10 +100,16 @@
                     <span class="label">Total</span>
                     <span class="total-price">${{ trip.total_price }}</span>
                 </div>
+                <form method="POST" action="/cancel/{{ username }}/{{ trip.trip_index }}">
+                    <button type="submit" class="btn btn-primary" style="margin-top:1rem;">Cancel Booking</button>
+                </form>
             </div>
         </div>
     </div>
     {% endfor %}
+    {% else %}
+    <p class="empty-message">No bookings found yet. Book a trip to see it here.</p>
+    {% endif %}
 
     <div class="actions-heading">What would you like to do next?</div>
     <div class="actions">

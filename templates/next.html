@@ -48,6 +48,9 @@
         <div class="card-question">What would you like to do?</div>
         <a href="/itinerary/{{ username }}?history=true" class="btn btn-gold">View My Previous Trips</a>
         <a href="/book/{{ username }}" class="btn btn-primary">Book a New Trip</a>
+        {% if username == 'admin' %}
+        <a href="/admin" class="btn btn-primary">Admin Dashboard</a>
+        {% endif %}
     </div>
 </div>
 </body>

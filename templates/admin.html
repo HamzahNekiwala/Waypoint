@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Waypoint | Admin</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root { --gold: #C9A84C; --black: #0A0A0A; --surface: #111111; --surface-2: #1A1A1A; --border: rgba(201,168,76,0.2); --text: #F0EDE6; --muted: #888880; }
+        body { min-height: 100vh; background: var(--black); color: var(--text); font-family: 'Montserrat', sans-serif; font-weight: 300; padding: 3rem 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .eyebrow { font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 300; margin-bottom: 0.5rem; }
+        .sub { color: var(--muted); margin-bottom: 2rem; }
+        .grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.5rem; }
+        .card { background: var(--surface); border: 1px solid var(--border); padding: 1.75rem; }
+        .section-title { font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+        .table-wrap { overflow-x: auto; margin-bottom: 1.5rem; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { text-align: left; padding: 0.75rem 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 0.85rem; }
+        th { color: var(--muted); text-transform: uppercase; letter-spacing: 0.25em; }
+        .form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-bottom: 1rem; }
+        label { display: block; font-size: 0.65rem; margin-bottom: 0.35rem; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; }
+        input, select, textarea { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text); padding: 0.85rem 0.95rem; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; }
+        textarea { min-height: 100px; resize: vertical; }
+        .btn { display: inline-block; border: 1px solid var(--gold); color: var(--gold); background: transparent; padding: 0.95rem 1.2rem; text-transform: uppercase; letter-spacing: 0.25em; font-size: 0.75rem; cursor: pointer; transition: background 0.2s, color 0.2s; }
+        .btn:hover { background: var(--gold); color: var(--black); }
+        .help-text { color: var(--muted); font-size: 0.75rem; margin-top: 0.5rem; }
+        .divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
+        .notice { color: #7EC8A4; font-size: 0.9rem; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="eyebrow">Admin Dashboard</div>
+    <h1>Catalog Management</h1>
+    <p class="sub">Add new flights or hotels, and update pricing and availability for the current catalog.</p>
+
+    <div class="grid">
+        <div class="card">
+            <div class="section-title">Flights</div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Destination</th>
+                            <th>Date</th>
+                            <th>Price</th>
+                            <th>Seats</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for flight in catalog.flights %}
+                        <tr>
+                            <td>{{ flight.id }}</td>
+                            <td>{{ flight.destination }}</td>
+                            <td>{{ flight.date }}</td>
+                            <td>${{ flight.price }}</td>
+                            <td>{{ flight.available_seats if flight.available_seats is not none else 'Unlimited' }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section-title">Hotels</div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>City</th>
+                            <th>Price</th>
+                            <th>Rooms</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for hotel in catalog.hotels %}
+                        <tr>
+                            <td>{{ hotel.id }}</td>
+                            <td>{{ hotel.name }}</td>
+                            <td>{{ hotel.city }}</td>
+                            <td>${{ hotel.price }}</td>
+                            <td>{{ hotel.available_rooms if hotel.available_rooms is not none else 'Unlimited' }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section-title">Add New Flight</div>
+            <form method="POST" action="/admin/manage">
+                <input type="hidden" name="action" value="add_flight">
+                <div class="form-row">
+                    <label>Flight ID<input type="text" name="flight_id" placeholder="F-TYO-10" required></label>
+                    <label>Destination<input type="text" name="destination" placeholder="Tokyo" required></label>
+                </div>
+                <div class="form-row">
+                    <label>Price<input type="text" name="price" placeholder="850" required></label>
+                    <label>Date<input type="text" name="date" placeholder="2026-07-05" required></label>
+                </div>
+                <label>Available Seats<input type="text" name="available_seats" placeholder="Optional"></label>
+                <p class="help-text">Leave seats blank for unlimited availability.</p>
+                <button type="submit" class="btn">Add Flight</button>
+            </form>
+
+            <div class="divider"></div>
+
+            <div class="section-title">Add New Hotel</div>
+            <form method="POST" action="/admin/manage">
+                <input type="hidden" name="action" value="add_hotel">
+                <div class="form-row">
+                    <label>Hotel ID<input type="text" name="hotel_id" placeholder="H-TYO-10" required></label>
+                    <label>Name<input type="text" name="name" placeholder="New Hotel" required></label>
+                </div>
+                <div class="form-row">
+                    <label>City<input type="text" name="city" placeholder="Tokyo" required></label>
+                    <label>Price<input type="text" name="price" placeholder="150" required></label>
+                </div>
+                <label>Available Dates<textarea name="available_dates" placeholder="2026-07-05, 2026-07-12"></textarea></label>
+                <label>Available Rooms<input type="text" name="available_rooms" placeholder="Optional"></label>
+                <p class="help-text">Enter hotel available dates separated by commas.</p>
+                <button type="submit" class="btn">Add Hotel</button>
+            </form>
+
+            <div class="divider"></div>
+
+            <div class="section-title">Update Existing Item</div>
+            <form method="POST" action="/admin/manage">
+                <input type="hidden" name="action" value="update_item">
+                <div class="form-row">
+                    <label>Item Type<select name="item_type">
+                        <option value="flight">Flight</option>
+                        <option value="hotel">Hotel</option>
+                    </select></label>
+                    <label>Item ID<input type="text" name="item_id" placeholder="Item ID" required></label>
+                </div>
+                <label>Price<input type="text" name="price" placeholder="New price"></label>
+                <label>Available Seats<input type="text" name="available_seats" placeholder="Flights only"></label>
+                <label>Available Rooms<input type="text" name="available_rooms" placeholder="Hotels only"></label>
+                <label>Available Dates<textarea name="available_dates" placeholder="2026-07-05, 2026-07-12"></textarea></label>
+                <p class="help-text">Use hotel dates to update availability windows. Leave blank if unchanged.</p>
+                <button type="submit" class="btn">Update Item</button>
+            </form>
+        </div>
+    </div>
+
+    <p class="notice">Use the admin dashboard to manage the travel catalog and keep availability in sync with booking demand.</p>
+</div>
+</body>
+</html>
