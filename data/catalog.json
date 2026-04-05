@@ -8,6 +8,7 @@
     ],
     "flights": [
         {
+            "available_seats": 32,
             "date": "2026-07-05",
             "destination": "Tokyo",
             "id": "F-TYO-01",
