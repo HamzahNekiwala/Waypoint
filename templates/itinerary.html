@@ -32,6 +32,8 @@
         .detail-row:last-of-type { border-bottom: none; }
         .detail-label { font-size: 0.72rem; color: var(--muted); }
         .detail-value { font-size: 0.78rem; color: var(--text); }
+        .detail-value.time-range { font-variant-numeric: tabular-nums; letter-spacing: 0.06em; white-space: nowrap; }
+        .time-dash { padding: 0 0.35em; font-weight: 400; opacity: 0.85; }
         .detail-price { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--text); }
         .divider { height: 1px; background: var(--border); margin: 1.25rem 0; }
         .breakdown { background: var(--surface-2); padding: 1rem 1.25rem; margin-top: 1.25rem; }
@@ -72,6 +74,16 @@
 'Amsterdam': 'https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?w=800&q=80'
 } %}
 
+{% macro format_iso_time(iso) -%}
+{%- if iso and iso is string and iso|length >= 16 and 'T' in iso -%}
+{{- iso[11:16] -}}
+{%- elif iso -%}
+{{- iso -}}
+{%- else -%}
+—
+{%- endif -%}
+{%- endmacro %}
+
 <div class="container">
     <div class="eyebrow">{{ "Travel History" if is_history else "Recent Booking" }}</div>
     <h2>{{ "Your Journeys" if is_history else "Your Booking" }}</h2>
@@ -85,17 +97,38 @@
             <div class="trip-hero-dest">{{ trip.destination }}</div>
         </div>
         <div class="trip-body">
-            <div class="section-label">✈️ &nbsp; Flight</div>
+            <div class="section-label">Flight</div>
             <div class="detail-row"><span class="detail-label">Flight ID</span><span class="detail-value">{{ trip.flight_id }}</span></div>
             <div class="detail-row"><span class="detail-label">Date</span><span class="detail-value">{{ trip.date }}</span></div>
-            <div class="detail-row"><span class="detail-label">Flight Cost</span><span class="detail-price">${{ trip.flight_price }}</span></div>
+            <div class="detail-row"><span class="detail-label">Seat</span><span class="detail-value">{{ trip.flight_seat }}</span></div>
+            <div class="detail-row"><span class="detail-label">Base fare</span><span class="detail-price">${{ trip.flight_price }}</span></div>
+            {% if trip.seat_surcharge and trip.seat_surcharge > 0 %}
+            <div class="detail-row"><span class="detail-label">Premium seat</span><span class="detail-price">${{ trip.seat_surcharge }}</span></div>
+            {% endif %}
             <div class="divider"></div>
-            <div class="section-label">🏨 &nbsp; Hotel</div>
+            <div class="section-label">Hotel</div>
             <div class="detail-row"><span class="detail-label">Hotel</span><span class="detail-value">{{ trip.hotel_name }}</span></div>
-            <div class="detail-row"><span class="detail-label">Hotel Cost</span><span class="detail-price">${{ trip.hotel_price }}</span></div>
+            {% if trip.hotel_room_type %}
+            <div class="detail-row"><span class="detail-label">Room</span><span class="detail-value">{{ trip.hotel_room_type }}{% if trip.hotel_room_beds %} · {{ trip.hotel_room_beds }}{% endif %}</span></div>
+            {% endif %}
+            <div class="detail-row"><span class="detail-label">Room (1 night)</span><span class="detail-price">${{ trip.hotel_price }}</span></div>
+            {% if trip.attractions and trip.attractions|length > 0 %}
+            <div class="divider"></div>
+            <div class="section-label">Local experiences</div>
+            {% for a in trip.attractions %}
+            <div class="detail-row"><span class="detail-label">{{ a.name }}</span><span class="detail-price">${{ a.price }}</span></div>
+            <div class="detail-row"><span class="detail-label">Time</span><span class="detail-value time-range">{{ format_iso_time(a.start) }} <span class="time-dash">–</span> {{ format_iso_time(a.end) }}</span></div>
+            {% endfor %}
+            {% endif %}
             <div class="breakdown">
-                <div class="breakdown-row"><span>Flight</span><span class="val">${{ trip.flight_price }}</span></div>
-                <div class="breakdown-row"><span>Hotel</span><span class="val">${{ trip.hotel_price }}</span></div>
+                <div class="breakdown-row"><span>Flight base</span><span class="val">${{ trip.flight_price }}</span></div>
+                {% if trip.seat_surcharge and trip.seat_surcharge > 0 %}
+                <div class="breakdown-row"><span>Premium seat</span><span class="val">${{ trip.seat_surcharge }}</span></div>
+                {% endif %}
+                <div class="breakdown-row"><span>Hotel room</span><span class="val">${{ trip.hotel_price }}</span></div>
+                {% if trip.attractions_total and trip.attractions_total > 0 %}
+                <div class="breakdown-row"><span>Experiences</span><span class="val">${{ trip.attractions_total }}</span></div>
+                {% endif %}
                 <div class="breakdown-total">
                     <span class="label">Total</span>
                     <span class="total-price">${{ trip.total_price }}</span>

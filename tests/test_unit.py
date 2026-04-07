@@ -26,16 +26,29 @@ class TestWaypointUnit(unittest.TestCase):
             # Checks if the redirect URL contains the lowercase, stripped name
             self.assertIn('user123', response.location)
 
-    # UT-04-CB: Testing Cancellation logic
-    @patch('app.load_data')
-    @patch('app.save_data')
-    def test_cancel_last_trip_logic(self, mock_save, mock_load):
-        mock_load.return_value = {"guest": {"itinerary": [{"id": 1}]}}
-        result = app.cancel_last_trip("guest")
-        self.assertTrue(result)
-        # Verify save_data was called with an empty list
-        args, _ = mock_save.call_args
-        self.assertEqual(len(args[1]["guest"]["itinerary"]), 0)
+    # UT-04-CB: Cancellation removes last trip (via HTTP + mocked persistence)
+    @patch("app.save_data")
+    @patch("app.load_data")
+    def test_cancel_last_trip_logic(self, mock_load, mock_save):
+        users = {"guest": {"itinerary": [{"flight_id": "FX", "hotel_id": "HX", "attractions": []}]}}
+        catalog = {
+            "flights": [{"id": "FX", "booked_seats": []}],
+            "hotels": [{"id": "HX", "rooms": []}],
+            "attractions": [],
+        }
+
+        def fake_load(name):
+            if name == "users.json":
+                return users
+            return catalog
+
+        mock_load.side_effect = fake_load
+        app.app.testing = True
+        with app.app.test_client() as client:
+            resp = client.post("/cancel/guest", follow_redirects=False)
+        self.assertEqual(resp.status_code, 302)
+        self.assertEqual(len(users["guest"]["itinerary"]), 0)
+        self.assertTrue(mock_save.called)
 
 if __name__ == '__main__':
     unittest.main()

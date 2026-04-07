@@ -6,15 +6,13 @@ class TestWaypointSystem(unittest.TestCase):
         app.app.testing = True
         self.client = app.app.test_client()
 
-    # IT-03-CB: Multi-step routing logic
+    # IT-03-CB: Multi-step routing logic (flight → seat → hotel → …)
     def test_search_flow_redirection(self):
-        # Simulate selecting a flight in a 'flight-first' flow
         response = self.client.post('/results/tester/Tokyo/flight/flight', data={
             'flight_id': 'F-TYO-01'
         }, follow_redirects=True)
-        # Should now be showing the hotel selection page
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'Choose Your Hotel', response.data)
+        self.assertIn(b'Select Your Seat', response.data)
 
     # ST-02-OB: Testing Itinerary History Toggle
     def test_itinerary_history_view(self):

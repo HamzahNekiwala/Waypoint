@@ -1,32 +1,84 @@
 import unittest
+import unittest.mock
 import app
-import json
-import os
 
-#This is the "RED" test
 
 class TestCancellation(unittest.TestCase):
     def setUp(self):
-        #THIS CREATES A TEST USER THAT HAS ONE TRIP TO TEST WITH
-        self.test_user = "test_guest"
-        self.test_data = {
-            self.test_user: {
+        app.app.testing = True
+        self.client = app.app.test_client()
+
+    def test_cancel_route_removes_trip_with_context(self):
+        users = {
+            "trip_user": {
                 "itinerary": [
-                    {"flight_id": "F-TYO-01", "hotel_id": "H-TYO-01", "destination": "Tokyo"}
+                    {
+                        "flight_id": "F1",
+                        "hotel_id": "H1",
+                        "destination": "Tokyo",
+                        "date": "2026-07-05",
+                        "flight_seat": "3A",
+                        "hotel_room_id": "R1",
+                        "attractions": [],
+                    }
                 ]
             }
         }
-        with open ('data/users.json', 'w') as f:
-            json.dump(self.test_data, f)
+        catalog = {
+            "flights": [
+                {
+                    "id": "F1",
+                    "destination": "Tokyo",
+                    "date": "2026-07-05",
+                    "price": 100,
+                    "seat_rows": 4,
+                    "seat_letters": ["A", "B"],
+                    "premium_rows": [1],
+                    "premium_seat_fee": 20,
+                    "blocked_seats": [],
+                    "booked_seats": ["3A"],
+                }
+            ],
+            "hotels": [
+                {
+                    "id": "H1",
+                    "name": "Test Inn",
+                    "city": "Tokyo",
+                    "price": 50,
+                    "available_dates": ["2026-07-05"],
+                    "rooms": [
+                        {
+                            "id": "R1",
+                            "floor": 2,
+                            "type": "Standard",
+                            "beds": "1 Queen",
+                            "max_guests": 2,
+                            "price_per_night": 50,
+                            "available": False,
+                        }
+                    ],
+                }
+            ],
+            "attractions": [],
+        }
 
-    def test_cancel_trip_removes_from_json(self):
-        #THIS IS TESTING A FEATURE THATS YET TO BE DEVELOPED!
-        result = app.cancel_last_trip(self.test_user)
-        self.assertTrue(result)
+        with unittest.mock.patch("app.load_data") as load, unittest.mock.patch(
+            "app.save_data"
+        ) as save:
 
-        with open('data/users.json', 'r') as f:
-            updated_users = json.load(f)
-        self.assertEqual(len(updated_users[self.test_user]['itinerary']), 0)
+            def fake_load(name):
+                if name == "users.json":
+                    return users
+                return catalog
 
-if __name__ == '__main__':
+            load.side_effect = fake_load
+            resp = self.client.post("/cancel/trip_user/0", follow_redirects=False)
+            self.assertEqual(resp.status_code, 302)
+            self.assertEqual(len(users["trip_user"]["itinerary"]), 0)
+            self.assertNotIn("3A", catalog["flights"][0]["booked_seats"])
+            self.assertTrue(catalog["hotels"][0]["rooms"][0]["available"])
+            self.assertEqual(save.call_count, 2)
+
+
+if __name__ == "__main__":
     unittest.main()

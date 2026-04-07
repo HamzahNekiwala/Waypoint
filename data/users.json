@@ -1,6 +1,57 @@
 {
-    "sala": {
-        "itinerary": []
+    "gibran": {
+        "itinerary": [
+            {
+                "attractions": [
+                    {
+                        "attraction_id": "ATR-LON-TOWER-a",
+                        "end": "2026-06-12T12:00",
+                        "name": "Tower of London Highlights",
+                        "price": 48,
+                        "session_id": "S-LON-TWR-a-1",
+                        "start": "2026-06-12T09:30"
+                    }
+                ],
+                "attractions_total": 48,
+                "date": "2026-06-12",
+                "destination": "London",
+                "flight_base_price": 450,
+                "flight_id": "F-LON-01",
+                "flight_seat": "3A",
+                "hotel_id": "H-LON-01",
+                "hotel_room_beds": "2 Twin",
+                "hotel_room_id": "H-LON-01-R52",
+                "hotel_room_price": 215,
+                "hotel_room_type": "Standard Twin",
+                "seat_surcharge": 0,
+                "total_price": 713
+            },
+            {
+                "attractions": [
+                    {
+                        "attraction_id": "ATR-TYO-MORI-a",
+                        "end": "2026-07-05T11:30",
+                        "name": "Mori Art Museum & Sky Deck",
+                        "price": 32,
+                        "session_id": "S-TYO-M-a-1",
+                        "start": "2026-07-05T10:00"
+                    }
+                ],
+                "attractions_total": 32,
+                "date": "2026-07-05",
+                "destination": "Tokyo",
+                "flight_base_price": 850,
+                "flight_id": "F-TYO-01",
+                "flight_seat": "1B",
+                "hotel_id": "H-TYO-01",
+                "hotel_room_beds": "1 Queen",
+                "hotel_room_id": "H-TYO-01-R51",
+                "hotel_room_price": 150,
+                "hotel_room_type": "Standard Queen",
+                "seat_surcharge": 45,
+                "total_price": 1077
+            }
+        ]
     },
     "test_guest": {
         "itinerary": []

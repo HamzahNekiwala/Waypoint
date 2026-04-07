@@ -1,4 +1,729 @@
 {
+    "attractions": [
+        {
+            "city": "Tokyo",
+            "description": "Timed entry with skyline views.",
+            "id": "ATR-TYO-MORI-a",
+            "name": "Mori Art Museum & Sky Deck",
+            "sessions": [
+                {
+                    "end": "2026-07-05T11:30",
+                    "id": "S-TYO-M-a-1",
+                    "price": 32,
+                    "spots_left": 24,
+                    "start": "2026-07-05T10:00"
+                },
+                {
+                    "end": "2026-07-05T15:30",
+                    "id": "S-TYO-M-a-2",
+                    "price": 32,
+                    "spots_left": 25,
+                    "start": "2026-07-05T14:00"
+                },
+                {
+                    "end": "2026-07-05T18:30",
+                    "id": "S-TYO-M-a-3",
+                    "price": 38,
+                    "spots_left": 20,
+                    "start": "2026-07-05T17:00"
+                }
+            ]
+        },
+        {
+            "city": "Tokyo",
+            "description": "Guided tasting tour.",
+            "id": "ATR-TYO-TSUKI-a",
+            "name": "Tsukiji Outer Market Food Walk",
+            "sessions": [
+                {
+                    "end": "2026-07-05T11:00",
+                    "id": "S-TYO-T-a-1",
+                    "price": 55,
+                    "spots_left": 18,
+                    "start": "2026-07-05T09:00"
+                },
+                {
+                    "end": "2026-07-05T14:30",
+                    "id": "S-TYO-T-a-2",
+                    "price": 55,
+                    "spots_left": 18,
+                    "start": "2026-07-05T12:30"
+                }
+            ]
+        },
+        {
+            "city": "Tokyo",
+            "description": "Timed entry with skyline views.",
+            "id": "ATR-TYO-MORI-b",
+            "name": "Mori Art Museum & Sky Deck",
+            "sessions": [
+                {
+                    "end": "2026-07-12T11:30",
+                    "id": "S-TYO-M-b-1",
+                    "price": 32,
+                    "spots_left": 25,
+                    "start": "2026-07-12T10:00"
+                },
+                {
+                    "end": "2026-07-12T15:30",
+                    "id": "S-TYO-M-b-2",
+                    "price": 32,
+                    "spots_left": 25,
+                    "start": "2026-07-12T14:00"
+                },
+                {
+                    "end": "2026-07-12T18:30",
+                    "id": "S-TYO-M-b-3",
+                    "price": 38,
+                    "spots_left": 20,
+                    "start": "2026-07-12T17:00"
+                }
+            ]
+        },
+        {
+            "city": "Tokyo",
+            "description": "Guided tasting tour.",
+            "id": "ATR-TYO-TSUKI-b",
+            "name": "Tsukiji Outer Market Food Walk",
+            "sessions": [
+                {
+                    "end": "2026-07-12T11:00",
+                    "id": "S-TYO-T-b-1",
+                    "price": 55,
+                    "spots_left": 18,
+                    "start": "2026-07-12T09:00"
+                },
+                {
+                    "end": "2026-07-12T14:30",
+                    "id": "S-TYO-T-b-2",
+                    "price": 55,
+                    "spots_left": 18,
+                    "start": "2026-07-12T12:30"
+                }
+            ]
+        },
+        {
+            "city": "Tokyo",
+            "description": "Timed entry with skyline views.",
+            "id": "ATR-TYO-MORI-c",
+            "name": "Mori Art Museum & Sky Deck",
+            "sessions": [
+                {
+                    "end": "2026-07-19T11:30",
+                    "id": "S-TYO-M-c-1",
+                    "price": 32,
+                    "spots_left": 25,
+                    "start": "2026-07-19T10:00"
+                },
+                {
+                    "end": "2026-07-19T15:30",
+                    "id": "S-TYO-M-c-2",
+                    "price": 32,
+                    "spots_left": 25,
+                    "start": "2026-07-19T14:00"
+                },
+                {
+                    "end": "2026-07-19T18:30",
+                    "id": "S-TYO-M-c-3",
+                    "price": 38,
+                    "spots_left": 20,
+                    "start": "2026-07-19T17:00"
+                }
+            ]
+        },
+        {
+            "city": "Tokyo",
+            "description": "Guided tasting tour.",
+            "id": "ATR-TYO-TSUKI-c",
+            "name": "Tsukiji Outer Market Food Walk",
+            "sessions": [
+                {
+                    "end": "2026-07-19T11:00",
+                    "id": "S-TYO-T-c-1",
+                    "price": 55,
+                    "spots_left": 18,
+                    "start": "2026-07-19T09:00"
+                },
+                {
+                    "end": "2026-07-19T14:30",
+                    "id": "S-TYO-T-c-2",
+                    "price": 55,
+                    "spots_left": 18,
+                    "start": "2026-07-19T12:30"
+                }
+            ]
+        },
+        {
+            "city": "London",
+            "description": "Yeoman-led introduction and Crown Jewels slot.",
+            "id": "ATR-LON-TOWER-a",
+            "name": "Tower of London Highlights",
+            "sessions": [
+                {
+                    "end": "2026-06-12T12:00",
+                    "id": "S-LON-TWR-a-1",
+                    "price": 48,
+                    "spots_left": 29,
+                    "start": "2026-06-12T09:30"
+                },
+                {
+                    "end": "2026-06-12T15:30",
+                    "id": "S-LON-TWR-a-2",
+                    "price": 48,
+                    "spots_left": 28,
+                    "start": "2026-06-12T13:00"
+                }
+            ]
+        },
+        {
+            "city": "London",
+            "description": "Sightseeing cruise with live commentary.",
+            "id": "ATR-LON-THAMES-a",
+            "name": "Thames Evening Cruise",
+            "sessions": [
+                {
+                    "end": "2026-06-12T19:30",
+                    "id": "S-LON-TH-a-1",
+                    "price": 42,
+                    "spots_left": 40,
+                    "start": "2026-06-12T18:00"
+                },
+                {
+                    "end": "2026-06-12T21:30",
+                    "id": "S-LON-TH-a-2",
+                    "price": 45,
+                    "spots_left": 35,
+                    "start": "2026-06-12T20:00"
+                }
+            ]
+        },
+        {
+            "city": "London",
+            "description": "Yeoman-led introduction and Crown Jewels slot.",
+            "id": "ATR-LON-TOWER-b",
+            "name": "Tower of London Highlights",
+            "sessions": [
+                {
+                    "end": "2026-06-18T12:00",
+                    "id": "S-LON-TWR-b-1",
+                    "price": 48,
+                    "spots_left": 30,
+                    "start": "2026-06-18T09:30"
+                },
+                {
+                    "end": "2026-06-18T15:30",
+                    "id": "S-LON-TWR-b-2",
+                    "price": 48,
+                    "spots_left": 28,
+                    "start": "2026-06-18T13:00"
+                }
+            ]
+        },
+        {
+            "city": "London",
+            "description": "Sightseeing cruise with live commentary.",
+            "id": "ATR-LON-THAMES-b",
+            "name": "Thames Evening Cruise",
+            "sessions": [
+                {
+                    "end": "2026-06-18T19:30",
+                    "id": "S-LON-TH-b-1",
+                    "price": 42,
+                    "spots_left": 40,
+                    "start": "2026-06-18T18:00"
+                },
+                {
+                    "end": "2026-06-18T21:30",
+                    "id": "S-LON-TH-b-2",
+                    "price": 45,
+                    "spots_left": 35,
+                    "start": "2026-06-18T20:00"
+                }
+            ]
+        },
+        {
+            "city": "London",
+            "description": "Yeoman-led introduction and Crown Jewels slot.",
+            "id": "ATR-LON-TOWER-c",
+            "name": "Tower of London Highlights",
+            "sessions": [
+                {
+                    "end": "2026-06-25T12:00",
+                    "id": "S-LON-TWR-c-1",
+                    "price": 48,
+                    "spots_left": 30,
+                    "start": "2026-06-25T09:30"
+                },
+                {
+                    "end": "2026-06-25T15:30",
+                    "id": "S-LON-TWR-c-2",
+                    "price": 48,
+                    "spots_left": 28,
+                    "start": "2026-06-25T13:00"
+                }
+            ]
+        },
+        {
+            "city": "London",
+            "description": "Sightseeing cruise with live commentary.",
+            "id": "ATR-LON-THAMES-c",
+            "name": "Thames Evening Cruise",
+            "sessions": [
+                {
+                    "end": "2026-06-25T19:30",
+                    "id": "S-LON-TH-c-1",
+                    "price": 42,
+                    "spots_left": 40,
+                    "start": "2026-06-25T18:00"
+                },
+                {
+                    "end": "2026-06-25T21:30",
+                    "id": "S-LON-TH-c-2",
+                    "price": 45,
+                    "spots_left": 35,
+                    "start": "2026-06-25T20:00"
+                }
+            ]
+        },
+        {
+            "city": "Toronto",
+            "description": "Glass floor experience and lookout.",
+            "id": "ATR-YYZ-CN-a",
+            "name": "CN Tower Observation",
+            "sessions": [
+                {
+                    "end": "2026-08-01T11:00",
+                    "id": "S-YYZ-CN-a-1",
+                    "price": 28,
+                    "spots_left": 50,
+                    "start": "2026-08-01T10:00"
+                },
+                {
+                    "end": "2026-08-01T16:00",
+                    "id": "S-YYZ-CN-a-2",
+                    "price": 28,
+                    "spots_left": 50,
+                    "start": "2026-08-01T15:00"
+                },
+                {
+                    "end": "2026-08-01T20:00",
+                    "id": "S-YYZ-CN-a-3",
+                    "price": 32,
+                    "spots_left": 40,
+                    "start": "2026-08-01T19:00"
+                }
+            ]
+        },
+        {
+            "city": "Toronto",
+            "description": "Canadian masters focused walk-through.",
+            "id": "ATR-YYZ-AGO-a",
+            "name": "AGO Curator Tour",
+            "sessions": [
+                {
+                    "end": "2026-08-01T12:30",
+                    "id": "S-YYZ-AGO-a-1",
+                    "price": 22,
+                    "spots_left": 22,
+                    "start": "2026-08-01T11:00"
+                },
+                {
+                    "end": "2026-08-01T15:30",
+                    "id": "S-YYZ-AGO-a-2",
+                    "price": 22,
+                    "spots_left": 22,
+                    "start": "2026-08-01T14:00"
+                }
+            ]
+        },
+        {
+            "city": "Toronto",
+            "description": "Glass floor experience and lookout.",
+            "id": "ATR-YYZ-CN-b",
+            "name": "CN Tower Observation",
+            "sessions": [
+                {
+                    "end": "2026-08-08T11:00",
+                    "id": "S-YYZ-CN-b-1",
+                    "price": 28,
+                    "spots_left": 50,
+                    "start": "2026-08-08T10:00"
+                },
+                {
+                    "end": "2026-08-08T16:00",
+                    "id": "S-YYZ-CN-b-2",
+                    "price": 28,
+                    "spots_left": 50,
+                    "start": "2026-08-08T15:00"
+                },
+                {
+                    "end": "2026-08-08T20:00",
+                    "id": "S-YYZ-CN-b-3",
+                    "price": 32,
+                    "spots_left": 40,
+                    "start": "2026-08-08T19:00"
+                }
+            ]
+        },
+        {
+            "city": "Toronto",
+            "description": "Canadian masters focused walk-through.",
+            "id": "ATR-YYZ-AGO-b",
+            "name": "AGO Curator Tour",
+            "sessions": [
+                {
+                    "end": "2026-08-08T12:30",
+                    "id": "S-YYZ-AGO-b-1",
+                    "price": 22,
+                    "spots_left": 22,
+                    "start": "2026-08-08T11:00"
+                },
+                {
+                    "end": "2026-08-08T15:30",
+                    "id": "S-YYZ-AGO-b-2",
+                    "price": 22,
+                    "spots_left": 22,
+                    "start": "2026-08-08T14:00"
+                }
+            ]
+        },
+        {
+            "city": "Toronto",
+            "description": "Glass floor experience and lookout.",
+            "id": "ATR-YYZ-CN-c",
+            "name": "CN Tower Observation",
+            "sessions": [
+                {
+                    "end": "2026-08-15T11:00",
+                    "id": "S-YYZ-CN-c-1",
+                    "price": 28,
+                    "spots_left": 50,
+                    "start": "2026-08-15T10:00"
+                },
+                {
+                    "end": "2026-08-15T16:00",
+                    "id": "S-YYZ-CN-c-2",
+                    "price": 28,
+                    "spots_left": 50,
+                    "start": "2026-08-15T15:00"
+                },
+                {
+                    "end": "2026-08-15T20:00",
+                    "id": "S-YYZ-CN-c-3",
+                    "price": 32,
+                    "spots_left": 40,
+                    "start": "2026-08-15T19:00"
+                }
+            ]
+        },
+        {
+            "city": "Toronto",
+            "description": "Canadian masters focused walk-through.",
+            "id": "ATR-YYZ-AGO-c",
+            "name": "AGO Curator Tour",
+            "sessions": [
+                {
+                    "end": "2026-08-15T12:30",
+                    "id": "S-YYZ-AGO-c-1",
+                    "price": 22,
+                    "spots_left": 22,
+                    "start": "2026-08-15T11:00"
+                },
+                {
+                    "end": "2026-08-15T15:30",
+                    "id": "S-YYZ-AGO-c-2",
+                    "price": 22,
+                    "spots_left": 22,
+                    "start": "2026-08-15T14:00"
+                }
+            ]
+        },
+        {
+            "city": "Dubai",
+            "description": "Dune drive, camp, and buffet.",
+            "id": "ATR-DXB-DESERT-a",
+            "name": "Desert Safari & Dinner",
+            "sessions": [
+                {
+                    "end": "2026-11-05T21:00",
+                    "id": "S-DXB-D-a-1",
+                    "price": 185,
+                    "spots_left": 12,
+                    "start": "2026-11-05T15:00"
+                },
+                {
+                    "end": "2026-11-05T21:30",
+                    "id": "S-DXB-D-a-2",
+                    "price": 185,
+                    "spots_left": 12,
+                    "start": "2026-11-05T15:30"
+                }
+            ]
+        },
+        {
+            "city": "Dubai",
+            "description": "Panoramic old and new city views.",
+            "id": "ATR-DXB-FRAME-a",
+            "name": "Dubai Frame Skywalk",
+            "sessions": [
+                {
+                    "end": "2026-11-05T10:30",
+                    "id": "S-DXB-F-a-1",
+                    "price": 35,
+                    "spots_left": 60,
+                    "start": "2026-11-05T09:00"
+                },
+                {
+                    "end": "2026-11-05T17:30",
+                    "id": "S-DXB-F-a-2",
+                    "price": 35,
+                    "spots_left": 55,
+                    "start": "2026-11-05T16:00"
+                }
+            ]
+        },
+        {
+            "city": "Dubai",
+            "description": "Dune drive, camp, and buffet.",
+            "id": "ATR-DXB-DESERT-b",
+            "name": "Desert Safari & Dinner",
+            "sessions": [
+                {
+                    "end": "2026-11-12T21:00",
+                    "id": "S-DXB-D-b-1",
+                    "price": 185,
+                    "spots_left": 12,
+                    "start": "2026-11-12T15:00"
+                },
+                {
+                    "end": "2026-11-12T21:30",
+                    "id": "S-DXB-D-b-2",
+                    "price": 185,
+                    "spots_left": 12,
+                    "start": "2026-11-12T15:30"
+                }
+            ]
+        },
+        {
+            "city": "Dubai",
+            "description": "Panoramic old and new city views.",
+            "id": "ATR-DXB-FRAME-b",
+            "name": "Dubai Frame Skywalk",
+            "sessions": [
+                {
+                    "end": "2026-11-12T10:30",
+                    "id": "S-DXB-F-b-1",
+                    "price": 35,
+                    "spots_left": 60,
+                    "start": "2026-11-12T09:00"
+                },
+                {
+                    "end": "2026-11-12T17:30",
+                    "id": "S-DXB-F-b-2",
+                    "price": 35,
+                    "spots_left": 55,
+                    "start": "2026-11-12T16:00"
+                }
+            ]
+        },
+        {
+            "city": "Dubai",
+            "description": "Dune drive, camp, and buffet.",
+            "id": "ATR-DXB-DESERT-c",
+            "name": "Desert Safari & Dinner",
+            "sessions": [
+                {
+                    "end": "2026-11-19T21:00",
+                    "id": "S-DXB-D-c-1",
+                    "price": 185,
+                    "spots_left": 12,
+                    "start": "2026-11-19T15:00"
+                },
+                {
+                    "end": "2026-11-19T21:30",
+                    "id": "S-DXB-D-c-2",
+                    "price": 185,
+                    "spots_left": 12,
+                    "start": "2026-11-19T15:30"
+                }
+            ]
+        },
+        {
+            "city": "Dubai",
+            "description": "Panoramic old and new city views.",
+            "id": "ATR-DXB-FRAME-c",
+            "name": "Dubai Frame Skywalk",
+            "sessions": [
+                {
+                    "end": "2026-11-19T10:30",
+                    "id": "S-DXB-F-c-1",
+                    "price": 35,
+                    "spots_left": 60,
+                    "start": "2026-11-19T09:00"
+                },
+                {
+                    "end": "2026-11-19T17:30",
+                    "id": "S-DXB-F-c-2",
+                    "price": 35,
+                    "spots_left": 55,
+                    "start": "2026-11-19T16:00"
+                }
+            ]
+        },
+        {
+            "city": "Amsterdam",
+            "description": "Timed entry with audio guide.",
+            "id": "ATR-AMS-RJK-a",
+            "name": "Rijksmuseum Highlights",
+            "sessions": [
+                {
+                    "end": "2026-09-10T12:30",
+                    "id": "S-AMS-R-a-1",
+                    "price": 28,
+                    "spots_left": 35,
+                    "start": "2026-09-10T10:00"
+                },
+                {
+                    "end": "2026-09-10T16:00",
+                    "id": "S-AMS-R-a-2",
+                    "price": 28,
+                    "spots_left": 35,
+                    "start": "2026-09-10T13:30"
+                }
+            ]
+        },
+        {
+            "city": "Amsterdam",
+            "description": "Open boat route through central canals.",
+            "id": "ATR-AMS-CANAL-a",
+            "name": "Canal Cruise Classic",
+            "sessions": [
+                {
+                    "end": "2026-09-10T12:00",
+                    "id": "S-AMS-C-a-1",
+                    "price": 18,
+                    "spots_left": 45,
+                    "start": "2026-09-10T11:00"
+                },
+                {
+                    "end": "2026-09-10T16:00",
+                    "id": "S-AMS-C-a-2",
+                    "price": 18,
+                    "spots_left": 45,
+                    "start": "2026-09-10T15:00"
+                },
+                {
+                    "end": "2026-09-10T19:00",
+                    "id": "S-AMS-C-a-3",
+                    "price": 22,
+                    "spots_left": 40,
+                    "start": "2026-09-10T18:00"
+                }
+            ]
+        },
+        {
+            "city": "Amsterdam",
+            "description": "Timed entry with audio guide.",
+            "id": "ATR-AMS-RJK-b",
+            "name": "Rijksmuseum Highlights",
+            "sessions": [
+                {
+                    "end": "2026-09-17T12:30",
+                    "id": "S-AMS-R-b-1",
+                    "price": 28,
+                    "spots_left": 35,
+                    "start": "2026-09-17T10:00"
+                },
+                {
+                    "end": "2026-09-17T16:00",
+                    "id": "S-AMS-R-b-2",
+                    "price": 28,
+                    "spots_left": 35,
+                    "start": "2026-09-17T13:30"
+                }
+            ]
+        },
+        {
+            "city": "Amsterdam",
+            "description": "Open boat route through central canals.",
+            "id": "ATR-AMS-CANAL-b",
+            "name": "Canal Cruise Classic",
+            "sessions": [
+                {
+                    "end": "2026-09-17T12:00",
+                    "id": "S-AMS-C-b-1",
+                    "price": 18,
+                    "spots_left": 45,
+                    "start": "2026-09-17T11:00"
+                },
+                {
+                    "end": "2026-09-17T16:00",
+                    "id": "S-AMS-C-b-2",
+                    "price": 18,
+                    "spots_left": 45,
+                    "start": "2026-09-17T15:00"
+                },
+                {
+                    "end": "2026-09-17T19:00",
+                    "id": "S-AMS-C-b-3",
+                    "price": 22,
+                    "spots_left": 40,
+                    "start": "2026-09-17T18:00"
+                }
+            ]
+        },
+        {
+            "city": "Amsterdam",
+            "description": "Timed entry with audio guide.",
+            "id": "ATR-AMS-RJK-c",
+            "name": "Rijksmuseum Highlights",
+            "sessions": [
+                {
+                    "end": "2026-09-24T12:30",
+                    "id": "S-AMS-R-c-1",
+                    "price": 28,
+                    "spots_left": 35,
+                    "start": "2026-09-24T10:00"
+                },
+                {
+                    "end": "2026-09-24T16:00",
+                    "id": "S-AMS-R-c-2",
+                    "price": 28,
+                    "spots_left": 35,
+                    "start": "2026-09-24T13:30"
+                }
+            ]
+        },
+        {
+            "city": "Amsterdam",
+            "description": "Open boat route through central canals.",
+            "id": "ATR-AMS-CANAL-c",
+            "name": "Canal Cruise Classic",
+            "sessions": [
+                {
+                    "end": "2026-09-24T12:00",
+                    "id": "S-AMS-C-c-1",
+                    "price": 18,
+                    "spots_left": 45,
+                    "start": "2026-09-24T11:00"
+                },
+                {
+                    "end": "2026-09-24T16:00",
+                    "id": "S-AMS-C-c-2",
+                    "price": 18,
+                    "spots_left": 45,
+                    "start": "2026-09-24T15:00"
+                },
+                {
+                    "end": "2026-09-24T19:00",
+                    "id": "S-AMS-C-c-3",
+                    "price": 22,
+                    "spots_left": 40,
+                    "start": "2026-09-24T18:00"
+                }
+            ]
+        }
+    ],
     "destinations": [
         "Tokyo",
         "London",
@@ -8,95 +733,383 @@
     ],
     "flights": [
         {
-            "available_seats": 32,
+            "aircraft": "Narrow-body",
+            "aisle_after": 2,
+            "blocked_seats": [
+                "1A",
+                "6D"
+            ],
+            "booked_seats": [
+                "1B"
+            ],
             "date": "2026-07-05",
             "destination": "Tokyo",
             "id": "F-TYO-01",
-            "price": 850
+            "premium_rows": [
+                1,
+                2
+            ],
+            "premium_seat_fee": 45,
+            "price": 850,
+            "seat_letters": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "seat_rows": 6
         },
         {
+            "aircraft": "Narrow-body",
+            "aisle_after": 2,
+            "blocked_seats": [
+                "1A",
+                "6D"
+            ],
+            "booked_seats": [],
             "date": "2026-07-12",
             "destination": "Tokyo",
             "id": "F-TYO-02",
-            "price": 920
+            "premium_rows": [
+                1,
+                2
+            ],
+            "premium_seat_fee": 45,
+            "price": 920,
+            "seat_letters": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "seat_rows": 6
         },
         {
+            "aircraft": "Narrow-body",
+            "aisle_after": 2,
+            "blocked_seats": [
+                "1A",
+                "6D"
+            ],
+            "booked_seats": [],
             "date": "2026-07-19",
             "destination": "Tokyo",
             "id": "F-TYO-03",
-            "price": 780
+            "premium_rows": [
+                1,
+                2
+            ],
+            "premium_seat_fee": 45,
+            "price": 780,
+            "seat_letters": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "seat_rows": 6
         },
         {
+            "aircraft": "Narrow-body",
+            "aisle_after": 2,
+            "blocked_seats": [
+                "1A",
+                "6D"
+            ],
+            "booked_seats": [
+                "3A"
+            ],
             "date": "2026-06-12",
             "destination": "London",
             "id": "F-LON-01",
-            "price": 450
+            "premium_rows": [
+                1,
+                2
+            ],
+            "premium_seat_fee": 45,
+            "price": 450,
+            "seat_letters": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "seat_rows": 6
         },
         {
+            "aircraft": "Narrow-body",
+            "aisle_after": 2,
+            "blocked_seats": [
+                "1A",
+                "6D"
+            ],
+            "booked_seats": [],
             "date": "2026-06-18",
             "destination": "London",
             "id": "F-LON-02",
-            "price": 510
+            "premium_rows": [
+                1,
+                2
+            ],
+            "premium_seat_fee": 45,
+            "price": 510,
+            "seat_letters": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "seat_rows": 6
         },
         {
+            "aircraft": "Narrow-body",
+            "aisle_after": 2,
+            "blocked_seats": [
+                "1A",
+                "6D"
+            ],
+            "booked_seats": [],
             "date": "2026-06-25",
             "destination": "London",
             "id": "F-LON-03",
-            "price": 480
+            "premium_rows": [
+                1,
+                2
+            ],
+            "premium_seat_fee": 45,
+            "price": 480,
+            "seat_letters": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "seat_rows": 6
         },
         {
+            "aircraft": "Narrow-body",
+            "aisle_after": 2,
+            "blocked_seats": [
+                "1A",
+                "6D"
+            ],
+            "booked_seats": [],
             "date": "2026-08-01",
             "destination": "Toronto",
             "id": "F-YYZ-01",
-            "price": 300
+            "premium_rows": [
+                1,
+                2
+            ],
+            "premium_seat_fee": 45,
+            "price": 300,
+            "seat_letters": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "seat_rows": 6
         },
         {
+            "aircraft": "Narrow-body",
+            "aisle_after": 2,
+            "blocked_seats": [
+                "1A",
+                "6D"
+            ],
+            "booked_seats": [],
             "date": "2026-08-08",
             "destination": "Toronto",
             "id": "F-YYZ-02",
-            "price": 350
+            "premium_rows": [
+                1,
+                2
+            ],
+            "premium_seat_fee": 45,
+            "price": 350,
+            "seat_letters": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "seat_rows": 6
         },
         {
+            "aircraft": "Narrow-body",
+            "aisle_after": 2,
+            "blocked_seats": [
+                "1A",
+                "6D"
+            ],
+            "booked_seats": [],
             "date": "2026-08-15",
             "destination": "Toronto",
             "id": "F-YYZ-03",
-            "price": 320
+            "premium_rows": [
+                1,
+                2
+            ],
+            "premium_seat_fee": 45,
+            "price": 320,
+            "seat_letters": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "seat_rows": 6
         },
         {
+            "aircraft": "Narrow-body",
+            "aisle_after": 2,
+            "blocked_seats": [
+                "1A",
+                "6D"
+            ],
+            "booked_seats": [],
             "date": "2026-11-05",
             "destination": "Dubai",
             "id": "F-DXB-01",
-            "price": 1100
+            "premium_rows": [
+                1,
+                2
+            ],
+            "premium_seat_fee": 45,
+            "price": 1100,
+            "seat_letters": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "seat_rows": 6
         },
         {
+            "aircraft": "Narrow-body",
+            "aisle_after": 2,
+            "blocked_seats": [
+                "1A",
+                "6D"
+            ],
+            "booked_seats": [],
             "date": "2026-11-12",
             "destination": "Dubai",
             "id": "F-DXB-02",
-            "price": 1250
+            "premium_rows": [
+                1,
+                2
+            ],
+            "premium_seat_fee": 45,
+            "price": 1250,
+            "seat_letters": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "seat_rows": 6
         },
         {
+            "aircraft": "Narrow-body",
+            "aisle_after": 2,
+            "blocked_seats": [
+                "1A",
+                "6D"
+            ],
+            "booked_seats": [],
             "date": "2026-11-19",
             "destination": "Dubai",
             "id": "F-DXB-03",
-            "price": 980
+            "premium_rows": [
+                1,
+                2
+            ],
+            "premium_seat_fee": 45,
+            "price": 980,
+            "seat_letters": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "seat_rows": 6
         },
         {
+            "aircraft": "Narrow-body",
+            "aisle_after": 2,
+            "blocked_seats": [
+                "1A",
+                "6D"
+            ],
+            "booked_seats": [],
             "date": "2026-09-10",
             "destination": "Amsterdam",
             "id": "F-AMS-01",
-            "price": 600
+            "premium_rows": [
+                1,
+                2
+            ],
+            "premium_seat_fee": 45,
+            "price": 600,
+            "seat_letters": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "seat_rows": 6
         },
         {
+            "aircraft": "Narrow-body",
+            "aisle_after": 2,
+            "blocked_seats": [
+                "1A",
+                "6D"
+            ],
+            "booked_seats": [],
             "date": "2026-09-17",
             "destination": "Amsterdam",
             "id": "F-AMS-02",
-            "price": 650
+            "premium_rows": [
+                1,
+                2
+            ],
+            "premium_seat_fee": 45,
+            "price": 650,
+            "seat_letters": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "seat_rows": 6
         },
         {
+            "aircraft": "Narrow-body",
+            "aisle_after": 2,
+            "blocked_seats": [
+                "1A",
+                "6D"
+            ],
+            "booked_seats": [],
             "date": "2026-09-24",
             "destination": "Amsterdam",
             "id": "F-AMS-03",
-            "price": 580
+            "premium_rows": [
+                1,
+                2
+            ],
+            "premium_seat_fee": 45,
+            "price": 580,
+            "seat_letters": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "seat_rows": 6
         }
     ],
     "hotels": [
@@ -109,7 +1122,173 @@
             "city": "Tokyo",
             "id": "H-TYO-01",
             "name": "Shibuya Sky Hotel",
-            "price": 150
+            "neighborhood": "City center",
+            "price": 145,
+            "rooms": [
+                {
+                    "available": false,
+                    "beds": "1 Queen",
+                    "floor": 5,
+                    "id": "H-TYO-01-R51",
+                    "max_guests": 2,
+                    "price_per_night": 150,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 5,
+                    "id": "H-TYO-01-R52",
+                    "max_guests": 2,
+                    "price_per_night": 145,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-TYO-01-R53",
+                    "max_guests": 2,
+                    "price_per_night": 175,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 5,
+                    "id": "H-TYO-01-R54",
+                    "max_guests": 3,
+                    "price_per_night": 210,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-TYO-01-R55",
+                    "max_guests": 2,
+                    "price_per_night": 195,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 5,
+                    "id": "H-TYO-01-R56",
+                    "max_guests": 4,
+                    "price_per_night": 165,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 4,
+                    "id": "H-TYO-01-R41",
+                    "max_guests": 2,
+                    "price_per_night": 150,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 4,
+                    "id": "H-TYO-01-R42",
+                    "max_guests": 2,
+                    "price_per_night": 145,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-TYO-01-R43",
+                    "max_guests": 2,
+                    "price_per_night": 175,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 4,
+                    "id": "H-TYO-01-R44",
+                    "max_guests": 3,
+                    "price_per_night": 210,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-TYO-01-R45",
+                    "max_guests": 2,
+                    "price_per_night": 195,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 4,
+                    "id": "H-TYO-01-R46",
+                    "max_guests": 4,
+                    "price_per_night": 165,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 3,
+                    "id": "H-TYO-01-R31",
+                    "max_guests": 2,
+                    "price_per_night": 150,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 3,
+                    "id": "H-TYO-01-R32",
+                    "max_guests": 2,
+                    "price_per_night": 145,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-TYO-01-R33",
+                    "max_guests": 2,
+                    "price_per_night": 175,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 3,
+                    "id": "H-TYO-01-R34",
+                    "max_guests": 3,
+                    "price_per_night": 210,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-TYO-01-R35",
+                    "max_guests": 2,
+                    "price_per_night": 195,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 3,
+                    "id": "H-TYO-01-R36",
+                    "max_guests": 4,
+                    "price_per_night": 165,
+                    "type": "Family"
+                }
+            ],
+            "star_rating": 4
         },
         {
             "available_dates": [
@@ -120,7 +1299,173 @@
             "city": "Tokyo",
             "id": "H-TYO-02",
             "name": "Akihabara Inn",
-            "price": 110
+            "neighborhood": "City center",
+            "price": 105,
+            "rooms": [
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 5,
+                    "id": "H-TYO-02-R51",
+                    "max_guests": 2,
+                    "price_per_night": 110,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 5,
+                    "id": "H-TYO-02-R52",
+                    "max_guests": 2,
+                    "price_per_night": 105,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-TYO-02-R53",
+                    "max_guests": 2,
+                    "price_per_night": 125,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 5,
+                    "id": "H-TYO-02-R54",
+                    "max_guests": 3,
+                    "price_per_night": 140,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-TYO-02-R55",
+                    "max_guests": 2,
+                    "price_per_night": 130,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 5,
+                    "id": "H-TYO-02-R56",
+                    "max_guests": 4,
+                    "price_per_night": 115,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 4,
+                    "id": "H-TYO-02-R41",
+                    "max_guests": 2,
+                    "price_per_night": 110,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 4,
+                    "id": "H-TYO-02-R42",
+                    "max_guests": 2,
+                    "price_per_night": 105,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-TYO-02-R43",
+                    "max_guests": 2,
+                    "price_per_night": 125,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 4,
+                    "id": "H-TYO-02-R44",
+                    "max_guests": 3,
+                    "price_per_night": 140,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-TYO-02-R45",
+                    "max_guests": 2,
+                    "price_per_night": 130,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 4,
+                    "id": "H-TYO-02-R46",
+                    "max_guests": 4,
+                    "price_per_night": 115,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 3,
+                    "id": "H-TYO-02-R31",
+                    "max_guests": 2,
+                    "price_per_night": 110,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 3,
+                    "id": "H-TYO-02-R32",
+                    "max_guests": 2,
+                    "price_per_night": 105,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-TYO-02-R33",
+                    "max_guests": 2,
+                    "price_per_night": 125,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 3,
+                    "id": "H-TYO-02-R34",
+                    "max_guests": 3,
+                    "price_per_night": 140,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-TYO-02-R35",
+                    "max_guests": 2,
+                    "price_per_night": 130,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 3,
+                    "id": "H-TYO-02-R36",
+                    "max_guests": 4,
+                    "price_per_night": 115,
+                    "type": "Family"
+                }
+            ],
+            "star_rating": 4
         },
         {
             "available_dates": [
@@ -131,7 +1476,173 @@
             "city": "Tokyo",
             "id": "H-TYO-03",
             "name": "Imperial Palace Suites",
-            "price": 350
+            "neighborhood": "City center",
+            "price": 340,
+            "rooms": [
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 5,
+                    "id": "H-TYO-03-R51",
+                    "max_guests": 2,
+                    "price_per_night": 350,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 5,
+                    "id": "H-TYO-03-R52",
+                    "max_guests": 2,
+                    "price_per_night": 340,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-TYO-03-R53",
+                    "max_guests": 2,
+                    "price_per_night": 380,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 5,
+                    "id": "H-TYO-03-R54",
+                    "max_guests": 3,
+                    "price_per_night": 420,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-TYO-03-R55",
+                    "max_guests": 2,
+                    "price_per_night": 400,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 5,
+                    "id": "H-TYO-03-R56",
+                    "max_guests": 4,
+                    "price_per_night": 360,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 4,
+                    "id": "H-TYO-03-R41",
+                    "max_guests": 2,
+                    "price_per_night": 350,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 4,
+                    "id": "H-TYO-03-R42",
+                    "max_guests": 2,
+                    "price_per_night": 340,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-TYO-03-R43",
+                    "max_guests": 2,
+                    "price_per_night": 380,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 4,
+                    "id": "H-TYO-03-R44",
+                    "max_guests": 3,
+                    "price_per_night": 420,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-TYO-03-R45",
+                    "max_guests": 2,
+                    "price_per_night": 400,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 4,
+                    "id": "H-TYO-03-R46",
+                    "max_guests": 4,
+                    "price_per_night": 360,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 3,
+                    "id": "H-TYO-03-R31",
+                    "max_guests": 2,
+                    "price_per_night": 350,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 3,
+                    "id": "H-TYO-03-R32",
+                    "max_guests": 2,
+                    "price_per_night": 340,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-TYO-03-R33",
+                    "max_guests": 2,
+                    "price_per_night": 380,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 3,
+                    "id": "H-TYO-03-R34",
+                    "max_guests": 3,
+                    "price_per_night": 420,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-TYO-03-R35",
+                    "max_guests": 2,
+                    "price_per_night": 400,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 3,
+                    "id": "H-TYO-03-R36",
+                    "max_guests": 4,
+                    "price_per_night": 360,
+                    "type": "Family"
+                }
+            ],
+            "star_rating": 4
         },
         {
             "available_dates": [
@@ -142,7 +1653,173 @@
             "city": "London",
             "id": "H-LON-01",
             "name": "The Grand London",
-            "price": 220
+            "neighborhood": "City center",
+            "price": 215,
+            "rooms": [
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 5,
+                    "id": "H-LON-01-R51",
+                    "max_guests": 2,
+                    "price_per_night": 220,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": false,
+                    "beds": "2 Twin",
+                    "floor": 5,
+                    "id": "H-LON-01-R52",
+                    "max_guests": 2,
+                    "price_per_night": 215,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-LON-01-R53",
+                    "max_guests": 2,
+                    "price_per_night": 250,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 5,
+                    "id": "H-LON-01-R54",
+                    "max_guests": 3,
+                    "price_per_night": 280,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-LON-01-R55",
+                    "max_guests": 2,
+                    "price_per_night": 265,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 5,
+                    "id": "H-LON-01-R56",
+                    "max_guests": 4,
+                    "price_per_night": 235,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 4,
+                    "id": "H-LON-01-R41",
+                    "max_guests": 2,
+                    "price_per_night": 220,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 4,
+                    "id": "H-LON-01-R42",
+                    "max_guests": 2,
+                    "price_per_night": 215,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-LON-01-R43",
+                    "max_guests": 2,
+                    "price_per_night": 250,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 4,
+                    "id": "H-LON-01-R44",
+                    "max_guests": 3,
+                    "price_per_night": 280,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-LON-01-R45",
+                    "max_guests": 2,
+                    "price_per_night": 265,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 4,
+                    "id": "H-LON-01-R46",
+                    "max_guests": 4,
+                    "price_per_night": 235,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 3,
+                    "id": "H-LON-01-R31",
+                    "max_guests": 2,
+                    "price_per_night": 220,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 3,
+                    "id": "H-LON-01-R32",
+                    "max_guests": 2,
+                    "price_per_night": 215,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-LON-01-R33",
+                    "max_guests": 2,
+                    "price_per_night": 250,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 3,
+                    "id": "H-LON-01-R34",
+                    "max_guests": 3,
+                    "price_per_night": 280,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-LON-01-R35",
+                    "max_guests": 2,
+                    "price_per_night": 265,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 3,
+                    "id": "H-LON-01-R36",
+                    "max_guests": 4,
+                    "price_per_night": 235,
+                    "type": "Family"
+                }
+            ],
+            "star_rating": 4
         },
         {
             "available_dates": [
@@ -153,7 +1830,173 @@
             "city": "London",
             "id": "H-LON-02",
             "name": "Piccadilly Lodge",
-            "price": 140
+            "neighborhood": "City center",
+            "price": 135,
+            "rooms": [
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 5,
+                    "id": "H-LON-02-R51",
+                    "max_guests": 2,
+                    "price_per_night": 140,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 5,
+                    "id": "H-LON-02-R52",
+                    "max_guests": 2,
+                    "price_per_night": 135,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-LON-02-R53",
+                    "max_guests": 2,
+                    "price_per_night": 155,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 5,
+                    "id": "H-LON-02-R54",
+                    "max_guests": 3,
+                    "price_per_night": 175,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-LON-02-R55",
+                    "max_guests": 2,
+                    "price_per_night": 165,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 5,
+                    "id": "H-LON-02-R56",
+                    "max_guests": 4,
+                    "price_per_night": 145,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 4,
+                    "id": "H-LON-02-R41",
+                    "max_guests": 2,
+                    "price_per_night": 140,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 4,
+                    "id": "H-LON-02-R42",
+                    "max_guests": 2,
+                    "price_per_night": 135,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-LON-02-R43",
+                    "max_guests": 2,
+                    "price_per_night": 155,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 4,
+                    "id": "H-LON-02-R44",
+                    "max_guests": 3,
+                    "price_per_night": 175,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-LON-02-R45",
+                    "max_guests": 2,
+                    "price_per_night": 165,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 4,
+                    "id": "H-LON-02-R46",
+                    "max_guests": 4,
+                    "price_per_night": 145,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 3,
+                    "id": "H-LON-02-R31",
+                    "max_guests": 2,
+                    "price_per_night": 140,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 3,
+                    "id": "H-LON-02-R32",
+                    "max_guests": 2,
+                    "price_per_night": 135,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-LON-02-R33",
+                    "max_guests": 2,
+                    "price_per_night": 155,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 3,
+                    "id": "H-LON-02-R34",
+                    "max_guests": 3,
+                    "price_per_night": 175,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-LON-02-R35",
+                    "max_guests": 2,
+                    "price_per_night": 165,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 3,
+                    "id": "H-LON-02-R36",
+                    "max_guests": 4,
+                    "price_per_night": 145,
+                    "type": "Family"
+                }
+            ],
+            "star_rating": 4
         },
         {
             "available_dates": [
@@ -164,7 +2007,173 @@
             "city": "London",
             "id": "H-LON-03",
             "name": "Thames View B&B",
-            "price": 180
+            "neighborhood": "City center",
+            "price": 175,
+            "rooms": [
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 5,
+                    "id": "H-LON-03-R51",
+                    "max_guests": 2,
+                    "price_per_night": 180,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 5,
+                    "id": "H-LON-03-R52",
+                    "max_guests": 2,
+                    "price_per_night": 175,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-LON-03-R53",
+                    "max_guests": 2,
+                    "price_per_night": 200,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 5,
+                    "id": "H-LON-03-R54",
+                    "max_guests": 3,
+                    "price_per_night": 220,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-LON-03-R55",
+                    "max_guests": 2,
+                    "price_per_night": 210,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 5,
+                    "id": "H-LON-03-R56",
+                    "max_guests": 4,
+                    "price_per_night": 190,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 4,
+                    "id": "H-LON-03-R41",
+                    "max_guests": 2,
+                    "price_per_night": 180,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 4,
+                    "id": "H-LON-03-R42",
+                    "max_guests": 2,
+                    "price_per_night": 175,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-LON-03-R43",
+                    "max_guests": 2,
+                    "price_per_night": 200,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 4,
+                    "id": "H-LON-03-R44",
+                    "max_guests": 3,
+                    "price_per_night": 220,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-LON-03-R45",
+                    "max_guests": 2,
+                    "price_per_night": 210,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 4,
+                    "id": "H-LON-03-R46",
+                    "max_guests": 4,
+                    "price_per_night": 190,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 3,
+                    "id": "H-LON-03-R31",
+                    "max_guests": 2,
+                    "price_per_night": 180,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 3,
+                    "id": "H-LON-03-R32",
+                    "max_guests": 2,
+                    "price_per_night": 175,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-LON-03-R33",
+                    "max_guests": 2,
+                    "price_per_night": 200,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 3,
+                    "id": "H-LON-03-R34",
+                    "max_guests": 3,
+                    "price_per_night": 220,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-LON-03-R35",
+                    "max_guests": 2,
+                    "price_per_night": 210,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 3,
+                    "id": "H-LON-03-R36",
+                    "max_guests": 4,
+                    "price_per_night": 190,
+                    "type": "Family"
+                }
+            ],
+            "star_rating": 4
         },
         {
             "available_dates": [
@@ -175,7 +2184,173 @@
             "city": "Toronto",
             "id": "H-YYZ-01",
             "name": "CN Tower View Hotel",
-            "price": 210
+            "neighborhood": "City center",
+            "price": 205,
+            "rooms": [
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 5,
+                    "id": "H-YYZ-01-R51",
+                    "max_guests": 2,
+                    "price_per_night": 210,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 5,
+                    "id": "H-YYZ-01-R52",
+                    "max_guests": 2,
+                    "price_per_night": 205,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-YYZ-01-R53",
+                    "max_guests": 2,
+                    "price_per_night": 230,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 5,
+                    "id": "H-YYZ-01-R54",
+                    "max_guests": 3,
+                    "price_per_night": 255,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-YYZ-01-R55",
+                    "max_guests": 2,
+                    "price_per_night": 240,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 5,
+                    "id": "H-YYZ-01-R56",
+                    "max_guests": 4,
+                    "price_per_night": 220,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 4,
+                    "id": "H-YYZ-01-R41",
+                    "max_guests": 2,
+                    "price_per_night": 210,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 4,
+                    "id": "H-YYZ-01-R42",
+                    "max_guests": 2,
+                    "price_per_night": 205,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-YYZ-01-R43",
+                    "max_guests": 2,
+                    "price_per_night": 230,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 4,
+                    "id": "H-YYZ-01-R44",
+                    "max_guests": 3,
+                    "price_per_night": 255,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-YYZ-01-R45",
+                    "max_guests": 2,
+                    "price_per_night": 240,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 4,
+                    "id": "H-YYZ-01-R46",
+                    "max_guests": 4,
+                    "price_per_night": 220,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 3,
+                    "id": "H-YYZ-01-R31",
+                    "max_guests": 2,
+                    "price_per_night": 210,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 3,
+                    "id": "H-YYZ-01-R32",
+                    "max_guests": 2,
+                    "price_per_night": 205,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-YYZ-01-R33",
+                    "max_guests": 2,
+                    "price_per_night": 230,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 3,
+                    "id": "H-YYZ-01-R34",
+                    "max_guests": 3,
+                    "price_per_night": 255,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-YYZ-01-R35",
+                    "max_guests": 2,
+                    "price_per_night": 240,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 3,
+                    "id": "H-YYZ-01-R36",
+                    "max_guests": 4,
+                    "price_per_night": 220,
+                    "type": "Family"
+                }
+            ],
+            "star_rating": 4
         },
         {
             "available_dates": [
@@ -186,7 +2361,173 @@
             "city": "Toronto",
             "id": "H-YYZ-02",
             "name": "Distillery District Lofts",
-            "price": 175
+            "neighborhood": "City center",
+            "price": 170,
+            "rooms": [
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 5,
+                    "id": "H-YYZ-02-R51",
+                    "max_guests": 2,
+                    "price_per_night": 175,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 5,
+                    "id": "H-YYZ-02-R52",
+                    "max_guests": 2,
+                    "price_per_night": 170,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-YYZ-02-R53",
+                    "max_guests": 2,
+                    "price_per_night": 195,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 5,
+                    "id": "H-YYZ-02-R54",
+                    "max_guests": 3,
+                    "price_per_night": 215,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-YYZ-02-R55",
+                    "max_guests": 2,
+                    "price_per_night": 200,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 5,
+                    "id": "H-YYZ-02-R56",
+                    "max_guests": 4,
+                    "price_per_night": 185,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 4,
+                    "id": "H-YYZ-02-R41",
+                    "max_guests": 2,
+                    "price_per_night": 175,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 4,
+                    "id": "H-YYZ-02-R42",
+                    "max_guests": 2,
+                    "price_per_night": 170,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-YYZ-02-R43",
+                    "max_guests": 2,
+                    "price_per_night": 195,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 4,
+                    "id": "H-YYZ-02-R44",
+                    "max_guests": 3,
+                    "price_per_night": 215,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-YYZ-02-R45",
+                    "max_guests": 2,
+                    "price_per_night": 200,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 4,
+                    "id": "H-YYZ-02-R46",
+                    "max_guests": 4,
+                    "price_per_night": 185,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 3,
+                    "id": "H-YYZ-02-R31",
+                    "max_guests": 2,
+                    "price_per_night": 175,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 3,
+                    "id": "H-YYZ-02-R32",
+                    "max_guests": 2,
+                    "price_per_night": 170,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-YYZ-02-R33",
+                    "max_guests": 2,
+                    "price_per_night": 195,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 3,
+                    "id": "H-YYZ-02-R34",
+                    "max_guests": 3,
+                    "price_per_night": 215,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-YYZ-02-R35",
+                    "max_guests": 2,
+                    "price_per_night": 200,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 3,
+                    "id": "H-YYZ-02-R36",
+                    "max_guests": 4,
+                    "price_per_night": 185,
+                    "type": "Family"
+                }
+            ],
+            "star_rating": 4
         },
         {
             "available_dates": [
@@ -197,7 +2538,173 @@
             "city": "Toronto",
             "id": "H-YYZ-03",
             "name": "Lakefront Suites",
-            "price": 190
+            "neighborhood": "City center",
+            "price": 185,
+            "rooms": [
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 5,
+                    "id": "H-YYZ-03-R51",
+                    "max_guests": 2,
+                    "price_per_night": 190,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 5,
+                    "id": "H-YYZ-03-R52",
+                    "max_guests": 2,
+                    "price_per_night": 185,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-YYZ-03-R53",
+                    "max_guests": 2,
+                    "price_per_night": 210,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 5,
+                    "id": "H-YYZ-03-R54",
+                    "max_guests": 3,
+                    "price_per_night": 230,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-YYZ-03-R55",
+                    "max_guests": 2,
+                    "price_per_night": 215,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 5,
+                    "id": "H-YYZ-03-R56",
+                    "max_guests": 4,
+                    "price_per_night": 200,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 4,
+                    "id": "H-YYZ-03-R41",
+                    "max_guests": 2,
+                    "price_per_night": 190,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 4,
+                    "id": "H-YYZ-03-R42",
+                    "max_guests": 2,
+                    "price_per_night": 185,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-YYZ-03-R43",
+                    "max_guests": 2,
+                    "price_per_night": 210,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 4,
+                    "id": "H-YYZ-03-R44",
+                    "max_guests": 3,
+                    "price_per_night": 230,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-YYZ-03-R45",
+                    "max_guests": 2,
+                    "price_per_night": 215,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 4,
+                    "id": "H-YYZ-03-R46",
+                    "max_guests": 4,
+                    "price_per_night": 200,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 3,
+                    "id": "H-YYZ-03-R31",
+                    "max_guests": 2,
+                    "price_per_night": 190,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 3,
+                    "id": "H-YYZ-03-R32",
+                    "max_guests": 2,
+                    "price_per_night": 185,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-YYZ-03-R33",
+                    "max_guests": 2,
+                    "price_per_night": 210,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 3,
+                    "id": "H-YYZ-03-R34",
+                    "max_guests": 3,
+                    "price_per_night": 230,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-YYZ-03-R35",
+                    "max_guests": 2,
+                    "price_per_night": 215,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 3,
+                    "id": "H-YYZ-03-R36",
+                    "max_guests": 4,
+                    "price_per_night": 200,
+                    "type": "Family"
+                }
+            ],
+            "star_rating": 4
         },
         {
             "available_dates": [
@@ -208,7 +2715,173 @@
             "city": "Dubai",
             "id": "H-DXB-01",
             "name": "Burj Al Arab Luxury",
-            "price": 850
+            "neighborhood": "City center",
+            "price": 820,
+            "rooms": [
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 5,
+                    "id": "H-DXB-01-R51",
+                    "max_guests": 2,
+                    "price_per_night": 850,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 5,
+                    "id": "H-DXB-01-R52",
+                    "max_guests": 2,
+                    "price_per_night": 820,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-DXB-01-R53",
+                    "max_guests": 2,
+                    "price_per_night": 900,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 5,
+                    "id": "H-DXB-01-R54",
+                    "max_guests": 3,
+                    "price_per_night": 950,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-DXB-01-R55",
+                    "max_guests": 2,
+                    "price_per_night": 920,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 5,
+                    "id": "H-DXB-01-R56",
+                    "max_guests": 4,
+                    "price_per_night": 880,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 4,
+                    "id": "H-DXB-01-R41",
+                    "max_guests": 2,
+                    "price_per_night": 850,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 4,
+                    "id": "H-DXB-01-R42",
+                    "max_guests": 2,
+                    "price_per_night": 820,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-DXB-01-R43",
+                    "max_guests": 2,
+                    "price_per_night": 900,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 4,
+                    "id": "H-DXB-01-R44",
+                    "max_guests": 3,
+                    "price_per_night": 950,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-DXB-01-R45",
+                    "max_guests": 2,
+                    "price_per_night": 920,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 4,
+                    "id": "H-DXB-01-R46",
+                    "max_guests": 4,
+                    "price_per_night": 880,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 3,
+                    "id": "H-DXB-01-R31",
+                    "max_guests": 2,
+                    "price_per_night": 850,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 3,
+                    "id": "H-DXB-01-R32",
+                    "max_guests": 2,
+                    "price_per_night": 820,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-DXB-01-R33",
+                    "max_guests": 2,
+                    "price_per_night": 900,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 3,
+                    "id": "H-DXB-01-R34",
+                    "max_guests": 3,
+                    "price_per_night": 950,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-DXB-01-R35",
+                    "max_guests": 2,
+                    "price_per_night": 920,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 3,
+                    "id": "H-DXB-01-R36",
+                    "max_guests": 4,
+                    "price_per_night": 880,
+                    "type": "Family"
+                }
+            ],
+            "star_rating": 4
         },
         {
             "available_dates": [
@@ -219,7 +2892,173 @@
             "city": "Dubai",
             "id": "H-DXB-02",
             "name": "Desert Oasis Resort",
-            "price": 400
+            "neighborhood": "City center",
+            "price": 390,
+            "rooms": [
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 5,
+                    "id": "H-DXB-02-R51",
+                    "max_guests": 2,
+                    "price_per_night": 400,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 5,
+                    "id": "H-DXB-02-R52",
+                    "max_guests": 2,
+                    "price_per_night": 390,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-DXB-02-R53",
+                    "max_guests": 2,
+                    "price_per_night": 430,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 5,
+                    "id": "H-DXB-02-R54",
+                    "max_guests": 3,
+                    "price_per_night": 460,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-DXB-02-R55",
+                    "max_guests": 2,
+                    "price_per_night": 440,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 5,
+                    "id": "H-DXB-02-R56",
+                    "max_guests": 4,
+                    "price_per_night": 410,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 4,
+                    "id": "H-DXB-02-R41",
+                    "max_guests": 2,
+                    "price_per_night": 400,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 4,
+                    "id": "H-DXB-02-R42",
+                    "max_guests": 2,
+                    "price_per_night": 390,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-DXB-02-R43",
+                    "max_guests": 2,
+                    "price_per_night": 430,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 4,
+                    "id": "H-DXB-02-R44",
+                    "max_guests": 3,
+                    "price_per_night": 460,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-DXB-02-R45",
+                    "max_guests": 2,
+                    "price_per_night": 440,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 4,
+                    "id": "H-DXB-02-R46",
+                    "max_guests": 4,
+                    "price_per_night": 410,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 3,
+                    "id": "H-DXB-02-R31",
+                    "max_guests": 2,
+                    "price_per_night": 400,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 3,
+                    "id": "H-DXB-02-R32",
+                    "max_guests": 2,
+                    "price_per_night": 390,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-DXB-02-R33",
+                    "max_guests": 2,
+                    "price_per_night": 430,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 3,
+                    "id": "H-DXB-02-R34",
+                    "max_guests": 3,
+                    "price_per_night": 460,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-DXB-02-R35",
+                    "max_guests": 2,
+                    "price_per_night": 440,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 3,
+                    "id": "H-DXB-02-R36",
+                    "max_guests": 4,
+                    "price_per_night": 410,
+                    "type": "Family"
+                }
+            ],
+            "star_rating": 4
         },
         {
             "available_dates": [
@@ -230,7 +3069,173 @@
             "city": "Dubai",
             "id": "H-DXB-03",
             "name": "Marina Sands Hotel",
-            "price": 300
+            "neighborhood": "City center",
+            "price": 295,
+            "rooms": [
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 5,
+                    "id": "H-DXB-03-R51",
+                    "max_guests": 2,
+                    "price_per_night": 300,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 5,
+                    "id": "H-DXB-03-R52",
+                    "max_guests": 2,
+                    "price_per_night": 295,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-DXB-03-R53",
+                    "max_guests": 2,
+                    "price_per_night": 320,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 5,
+                    "id": "H-DXB-03-R54",
+                    "max_guests": 3,
+                    "price_per_night": 350,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-DXB-03-R55",
+                    "max_guests": 2,
+                    "price_per_night": 330,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 5,
+                    "id": "H-DXB-03-R56",
+                    "max_guests": 4,
+                    "price_per_night": 310,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 4,
+                    "id": "H-DXB-03-R41",
+                    "max_guests": 2,
+                    "price_per_night": 300,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 4,
+                    "id": "H-DXB-03-R42",
+                    "max_guests": 2,
+                    "price_per_night": 295,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-DXB-03-R43",
+                    "max_guests": 2,
+                    "price_per_night": 320,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 4,
+                    "id": "H-DXB-03-R44",
+                    "max_guests": 3,
+                    "price_per_night": 350,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-DXB-03-R45",
+                    "max_guests": 2,
+                    "price_per_night": 330,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 4,
+                    "id": "H-DXB-03-R46",
+                    "max_guests": 4,
+                    "price_per_night": 310,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 3,
+                    "id": "H-DXB-03-R31",
+                    "max_guests": 2,
+                    "price_per_night": 300,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 3,
+                    "id": "H-DXB-03-R32",
+                    "max_guests": 2,
+                    "price_per_night": 295,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-DXB-03-R33",
+                    "max_guests": 2,
+                    "price_per_night": 320,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 3,
+                    "id": "H-DXB-03-R34",
+                    "max_guests": 3,
+                    "price_per_night": 350,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-DXB-03-R35",
+                    "max_guests": 2,
+                    "price_per_night": 330,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 3,
+                    "id": "H-DXB-03-R36",
+                    "max_guests": 4,
+                    "price_per_night": 310,
+                    "type": "Family"
+                }
+            ],
+            "star_rating": 4
         },
         {
             "available_dates": [
@@ -241,7 +3246,173 @@
             "city": "Amsterdam",
             "id": "H-AMS-01",
             "name": "Canal Side Boutique",
-            "price": 250
+            "neighborhood": "City center",
+            "price": 245,
+            "rooms": [
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 5,
+                    "id": "H-AMS-01-R51",
+                    "max_guests": 2,
+                    "price_per_night": 250,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 5,
+                    "id": "H-AMS-01-R52",
+                    "max_guests": 2,
+                    "price_per_night": 245,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-AMS-01-R53",
+                    "max_guests": 2,
+                    "price_per_night": 275,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 5,
+                    "id": "H-AMS-01-R54",
+                    "max_guests": 3,
+                    "price_per_night": 300,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-AMS-01-R55",
+                    "max_guests": 2,
+                    "price_per_night": 285,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 5,
+                    "id": "H-AMS-01-R56",
+                    "max_guests": 4,
+                    "price_per_night": 260,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 4,
+                    "id": "H-AMS-01-R41",
+                    "max_guests": 2,
+                    "price_per_night": 250,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 4,
+                    "id": "H-AMS-01-R42",
+                    "max_guests": 2,
+                    "price_per_night": 245,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-AMS-01-R43",
+                    "max_guests": 2,
+                    "price_per_night": 275,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 4,
+                    "id": "H-AMS-01-R44",
+                    "max_guests": 3,
+                    "price_per_night": 300,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-AMS-01-R45",
+                    "max_guests": 2,
+                    "price_per_night": 285,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 4,
+                    "id": "H-AMS-01-R46",
+                    "max_guests": 4,
+                    "price_per_night": 260,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 3,
+                    "id": "H-AMS-01-R31",
+                    "max_guests": 2,
+                    "price_per_night": 250,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 3,
+                    "id": "H-AMS-01-R32",
+                    "max_guests": 2,
+                    "price_per_night": 245,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-AMS-01-R33",
+                    "max_guests": 2,
+                    "price_per_night": 275,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 3,
+                    "id": "H-AMS-01-R34",
+                    "max_guests": 3,
+                    "price_per_night": 300,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-AMS-01-R35",
+                    "max_guests": 2,
+                    "price_per_night": 285,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 3,
+                    "id": "H-AMS-01-R36",
+                    "max_guests": 4,
+                    "price_per_night": 260,
+                    "type": "Family"
+                }
+            ],
+            "star_rating": 4
         },
         {
             "available_dates": [
@@ -252,7 +3423,173 @@
             "city": "Amsterdam",
             "id": "H-AMS-02",
             "name": "Dam Square Inn",
-            "price": 180
+            "neighborhood": "City center",
+            "price": 175,
+            "rooms": [
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 5,
+                    "id": "H-AMS-02-R51",
+                    "max_guests": 2,
+                    "price_per_night": 180,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 5,
+                    "id": "H-AMS-02-R52",
+                    "max_guests": 2,
+                    "price_per_night": 175,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-AMS-02-R53",
+                    "max_guests": 2,
+                    "price_per_night": 200,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 5,
+                    "id": "H-AMS-02-R54",
+                    "max_guests": 3,
+                    "price_per_night": 220,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-AMS-02-R55",
+                    "max_guests": 2,
+                    "price_per_night": 205,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 5,
+                    "id": "H-AMS-02-R56",
+                    "max_guests": 4,
+                    "price_per_night": 190,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 4,
+                    "id": "H-AMS-02-R41",
+                    "max_guests": 2,
+                    "price_per_night": 180,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 4,
+                    "id": "H-AMS-02-R42",
+                    "max_guests": 2,
+                    "price_per_night": 175,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-AMS-02-R43",
+                    "max_guests": 2,
+                    "price_per_night": 200,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 4,
+                    "id": "H-AMS-02-R44",
+                    "max_guests": 3,
+                    "price_per_night": 220,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-AMS-02-R45",
+                    "max_guests": 2,
+                    "price_per_night": 205,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 4,
+                    "id": "H-AMS-02-R46",
+                    "max_guests": 4,
+                    "price_per_night": 190,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 3,
+                    "id": "H-AMS-02-R31",
+                    "max_guests": 2,
+                    "price_per_night": 180,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 3,
+                    "id": "H-AMS-02-R32",
+                    "max_guests": 2,
+                    "price_per_night": 175,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-AMS-02-R33",
+                    "max_guests": 2,
+                    "price_per_night": 200,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 3,
+                    "id": "H-AMS-02-R34",
+                    "max_guests": 3,
+                    "price_per_night": 220,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-AMS-02-R35",
+                    "max_guests": 2,
+                    "price_per_night": 205,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 3,
+                    "id": "H-AMS-02-R36",
+                    "max_guests": 4,
+                    "price_per_night": 190,
+                    "type": "Family"
+                }
+            ],
+            "star_rating": 4
         },
         {
             "available_dates": [
@@ -263,7 +3600,173 @@
             "city": "Amsterdam",
             "id": "H-AMS-03",
             "name": "The Windmill Suites",
-            "price": 220
+            "neighborhood": "City center",
+            "price": 215,
+            "rooms": [
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 5,
+                    "id": "H-AMS-03-R51",
+                    "max_guests": 2,
+                    "price_per_night": 220,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 5,
+                    "id": "H-AMS-03-R52",
+                    "max_guests": 2,
+                    "price_per_night": 215,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-AMS-03-R53",
+                    "max_guests": 2,
+                    "price_per_night": 240,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 5,
+                    "id": "H-AMS-03-R54",
+                    "max_guests": 3,
+                    "price_per_night": 265,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 5,
+                    "id": "H-AMS-03-R55",
+                    "max_guests": 2,
+                    "price_per_night": 250,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 5,
+                    "id": "H-AMS-03-R56",
+                    "max_guests": 4,
+                    "price_per_night": 230,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 4,
+                    "id": "H-AMS-03-R41",
+                    "max_guests": 2,
+                    "price_per_night": 220,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 4,
+                    "id": "H-AMS-03-R42",
+                    "max_guests": 2,
+                    "price_per_night": 215,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-AMS-03-R43",
+                    "max_guests": 2,
+                    "price_per_night": 240,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 4,
+                    "id": "H-AMS-03-R44",
+                    "max_guests": 3,
+                    "price_per_night": 265,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 4,
+                    "id": "H-AMS-03-R45",
+                    "max_guests": 2,
+                    "price_per_night": 250,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 4,
+                    "id": "H-AMS-03-R46",
+                    "max_guests": 4,
+                    "price_per_night": 230,
+                    "type": "Family"
+                },
+                {
+                    "available": true,
+                    "beds": "1 Queen",
+                    "floor": 3,
+                    "id": "H-AMS-03-R31",
+                    "max_guests": 2,
+                    "price_per_night": 220,
+                    "type": "Standard Queen"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Twin",
+                    "floor": 3,
+                    "id": "H-AMS-03-R32",
+                    "max_guests": 2,
+                    "price_per_night": 215,
+                    "type": "Standard Twin"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-AMS-03-R33",
+                    "max_guests": 2,
+                    "price_per_night": 240,
+                    "type": "Deluxe King"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King + Sofa",
+                    "floor": 3,
+                    "id": "H-AMS-03-R34",
+                    "max_guests": 3,
+                    "price_per_night": 265,
+                    "type": "Corner Studio"
+                },
+                {
+                    "available": true,
+                    "beds": "1 King",
+                    "floor": 3,
+                    "id": "H-AMS-03-R35",
+                    "max_guests": 2,
+                    "price_per_night": 250,
+                    "type": "Executive"
+                },
+                {
+                    "available": true,
+                    "beds": "2 Queen",
+                    "floor": 3,
+                    "id": "H-AMS-03-R36",
+                    "max_guests": 4,
+                    "price_per_night": 230,
+                    "type": "Family"
+                }
+            ],
+            "star_rating": 4
         }
     ]
 }
