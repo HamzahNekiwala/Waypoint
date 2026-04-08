@@ -1,5 +1,12 @@
-from flask import Flask, render_template, json, request, redirect, url_for, abort
+from flask import Flask, render_template, json, request, redirect, url_for, abort, send_file
 import os
+from io import BytesIO
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.units import inch
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
+from reportlab.lib import colors
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -17,6 +24,36 @@ def save_data(file_name, data):
     path = os.path.join("data", file_name)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4)
+
+
+def init_user_passwords():
+    """Initialize passwords for users on app startup."""
+    try:
+        users = load_data("users.json")
+
+        # Migrate existing users without passwords
+        modified = False
+        for username in users:
+            if "password" not in users[username]:
+                users[username]["password"] = "123"
+                modified = True
+            if "is_admin" not in users[username]:
+                users[username]["is_admin"] = (username == "admin")
+                modified = True
+
+        # Create admin user if doesn't exist
+        if "admin" not in users:
+            users["admin"] = {
+                "itinerary": [],
+                "password": "admin",
+                "is_admin": True
+            }
+            modified = True
+
+        if modified:
+            save_data("users.json", users)
+    except Exception as e:
+        print(f"Error initializing user passwords: {e}")
 
 
 def parse_int(value, default=None):
@@ -237,6 +274,178 @@ def next_step(flow, current_step):
     return None
 
 
+def generate_booking_pdf(booking, username):
+    """Generate a PDF for a booking itinerary."""
+    buffer = BytesIO()
+    doc = SimpleDocTemplate(buffer, pagesize=letter, topMargin=0.75*inch, bottomMargin=0.75*inch)
+    elements = []
+    styles = getSampleStyleSheet()
+
+    # Title style
+    title_style = ParagraphStyle(
+        'CustomTitle',
+        parent=styles['Heading1'],
+        fontSize=24,
+        textColor=colors.HexColor('#0A0A0A'),
+        spaceAfter=0.3*inch,
+        alignment=1  # center
+    )
+
+    # Heading style
+    heading_style = ParagraphStyle(
+        'CustomHeading',
+        parent=styles['Heading2'],
+        fontSize=14,
+        textColor=colors.HexColor('#0A0A0A'),
+        spaceAfter=0.2*inch,
+        spaceBefore=0.2*inch
+    )
+
+    # Normal style
+    normal_style = ParagraphStyle(
+        'CustomNormal',
+        parent=styles['Normal'],
+        fontSize=11,
+        textColor=colors.HexColor('#0A0A0A'),
+        spaceAfter=0.1*inch
+    )
+
+    # Title
+    elements.append(Paragraph(f"{booking['destination']} - Booking Itinerary", title_style))
+    elements.append(Spacer(1, 0.2*inch))
+
+    # Trip Date
+    trip_date_text = f"Trip Date: {booking['date']}"
+    elements.append(Paragraph(trip_date_text, normal_style))
+    elements.append(Spacer(1, 0.2*inch))
+
+    # Flight Section
+    elements.append(Paragraph("Flight Details", heading_style))
+    flight_data = [
+        ["Field", "Details"],
+        ["Flight ID", booking.get('flight_id', '—')],
+        ["Date", booking.get('date', '—')],
+        ["Seat", booking.get('flight_seat', '—')],
+        ["Base Fare", f"${booking.get('flight_base_price', 0)}"]
+    ]
+    if booking.get('seat_surcharge', 0) > 0:
+        flight_data.append(["Premium Seat Fee", f"${booking.get('seat_surcharge', 0)}"])
+
+    flight_table = Table(flight_data, colWidths=[2.5*inch, 2.5*inch])
+    flight_table.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#C9A84C')),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+        ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0, 0), (-1, 0), 11),
+        ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+        ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
+        ('GRID', (0, 0), (-1, -1), 1, colors.black)
+    ]))
+    elements.append(flight_table)
+    elements.append(Spacer(1, 0.2*inch))
+
+    # Hotel Section
+    elements.append(Paragraph("Hotel Details", heading_style))
+    hotel_data = [
+        ["Field", "Details"],
+        ["Hotel", booking.get('hotel_name', booking.get('hotel_id', '—'))],
+    ]
+    if booking.get('hotel_room_type'):
+        hotel_data.append(["Room Type", booking.get('hotel_room_type')])
+    if booking.get('hotel_room_beds'):
+        hotel_data.append(["Beds", booking.get('hotel_room_beds')])
+    hotel_data.append(["Price (1 night)", f"${booking.get('hotel_room_price', 0)}"])
+
+    hotel_table = Table(hotel_data, colWidths=[2.5*inch, 2.5*inch])
+    hotel_table.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#C9A84C')),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+        ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0, 0), (-1, 0), 11),
+        ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+        ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
+        ('GRID', (0, 0), (-1, -1), 1, colors.black)
+    ]))
+    elements.append(hotel_table)
+    elements.append(Spacer(1, 0.2*inch))
+
+    # Attractions Section
+    if booking.get('attractions') and len(booking['attractions']) > 0:
+        elements.append(Paragraph("Local Experiences", heading_style))
+        attr_data = [["Name", "Time", "Price"]]
+        for attr in booking['attractions']:
+            start_time = attr.get('start', '—')[11:16] if isinstance(attr.get('start'), str) and 'T' in attr.get('start', '') else '—'
+            end_time = attr.get('end', '—')[11:16] if isinstance(attr.get('end'), str) and 'T' in attr.get('end', '') else '—'
+            attr_data.append([
+                attr.get('name', '—'),
+                f"{start_time} – {end_time}",
+                f"${attr.get('price', 0)}"
+            ])
+        attr_table = Table(attr_data, colWidths=[2.0*inch, 1.8*inch, 1.2*inch])
+        attr_table.setStyle(TableStyle([
+            ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#C9A84C')),
+            ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+            ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
+            ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+            ('FONTSIZE', (0, 0), (-1, 0), 11),
+            ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+            ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
+            ('GRID', (0, 0), (-1, -1), 1, colors.black)
+        ]))
+        elements.append(attr_table)
+        elements.append(Spacer(1, 0.2*inch))
+
+    # Price Breakdown
+    elements.append(Paragraph("Price Breakdown", heading_style))
+    breakdown_data = [
+        ["Item", "Price"],
+        ["Flight Base", f"${booking.get('flight_base_price', 0)}"]
+    ]
+    if booking.get('seat_surcharge', 0) > 0:
+        breakdown_data.append(["Premium Seat", f"${booking.get('seat_surcharge', 0)}"])
+    breakdown_data.append(["Hotel Room", f"${booking.get('hotel_room_price', 0)}"])
+    if booking.get('attractions_total', 0) > 0:
+        breakdown_data.append(["Experiences", f"${booking.get('attractions_total', 0)}"])
+    breakdown_data.append(["TOTAL", f"${booking.get('total_price', 0)}"])
+
+    breakdown_table = Table(breakdown_data, colWidths=[3.5*inch, 1.5*inch])
+    breakdown_table.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#C9A84C')),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+        ('ALIGN', (0, 0), (0, -1), 'LEFT'),
+        ('ALIGN', (1, 0), (1, -1), 'RIGHT'),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTNAME', (0, -1), (-1, -1), 'Helvetica-Bold'),
+        ('FONTSIZE', (0, 0), (-1, 0), 11),
+        ('FONTSIZE', (0, -1), (-1, -1), 12),
+        ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+        ('BACKGROUND', (0, 1), (-1, -2), colors.beige),
+        ('BACKGROUND', (0, -1), (-1, -1), colors.HexColor('#E6D5B8')),
+        ('GRID', (0, 0), (-1, -1), 1, colors.black),
+        ('TOPPADDING', (0, -1), (-1, -1), 12),
+        ('BOTTOMPADDING', (0, -1), (-1, -1), 12)
+    ]))
+    elements.append(breakdown_table)
+    elements.append(Spacer(1, 0.3*inch))
+
+    # Footer
+    footer_text = f"Generated on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+    elements.append(Paragraph(footer_text, ParagraphStyle(
+        'Footer',
+        parent=styles['Normal'],
+        fontSize=9,
+        textColor=colors.grey,
+        alignment=1
+    )))
+
+    # Build PDF
+    doc.build(elements)
+    buffer.seek(0)
+    return buffer
+
+
 def step_number(flow, step):
     try:
         return flow_steps(flow).index(step) + 1
@@ -410,15 +619,70 @@ def confirm_booking_direct(
     return True
 
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def home():
+    if request.method == "POST":
+        action = request.form.get("action")
+        if action == "login":
+            return handle_login()
+        elif action == "signup":
+            return handle_signup()
     return render_template("index.html")
+
+
+def handle_login():
+    """Handle user login with password."""
+    username = request.form.get("username", "").lower().strip()
+    password = request.form.get("password", "").strip()
+
+    if not username or not password:
+        return render_template("index.html", error="Username and password are required", tab="login")
+
+    users = load_data("users.json")
+
+    if username not in users:
+        return render_template("index.html", error="User not found", tab="login")
+
+    if users[username].get("password") != password:
+        return render_template("index.html", error="Invalid password", tab="login")
+
+    return redirect(url_for("what_next", username=username))
+
+
+def handle_signup():
+    """Handle user signup."""
+    username = request.form.get("username", "").lower().strip()
+    password = request.form.get("password", "").strip()
+    confirm_password = request.form.get("confirm_password", "").strip()
+
+    if not username or not password or not confirm_password:
+        return render_template("index.html", error="All fields are required", tab="signup")
+
+    if len(password) < 3:
+        return render_template("index.html", error="Password must be at least 3 characters", tab="signup")
+
+    if password != confirm_password:
+        return render_template("index.html", error="Passwords don't match", tab="signup")
+
+    users = load_data("users.json")
+
+    if username in users:
+        return render_template("index.html", error="User already exists", tab="signup")
+
+    # Create new user
+    users[username] = {
+        "itinerary": [],
+        "password": password,
+        "is_admin": False
+    }
+    save_data("users.json", users)
+
+    return redirect(url_for("what_next", username=username))
 
 
 @app.route("/login", methods=["POST"])
 def login():
-    username = request.form.get("username").lower().strip()
-    return redirect(url_for("what_next", username=username))
+    return handle_login()
 
 
 @app.route("/next/<username>")
@@ -876,5 +1140,35 @@ def cancel_booking(username, trip_index=None):
     return redirect(url_for("show_itinerary", username=username))
 
 
+@app.route("/export/<username>/<int:trip_index>")
+def export_booking_pdf(username, trip_index):
+    """Export a booking as a PDF file."""
+    users = load_data("users.json")
+    catalog = load_data("catalog.json")
+
+    user_info = users.get(username)
+    if not user_info or trip_index >= len(user_info.get("itinerary", [])):
+        abort(404)
+
+    booking = dict(user_info["itinerary"][trip_index])
+
+    # Enrich booking with hotel name from catalog
+    hotel = find_hotel(catalog, booking.get("hotel_id"))
+    if hotel:
+        booking["hotel_name"] = hotel["name"]
+
+    # Generate PDF
+    pdf_buffer = generate_booking_pdf(booking, username)
+
+    # Return PDF as downloadable file
+    return send_file(
+        pdf_buffer,
+        mimetype="application/pdf",
+        as_attachment=True,
+        download_name=f"booking_{booking['destination']}.pdf"
+    )
+
+
 if __name__ == '__main__':
+    init_user_passwords()
     app.run(host='0.0.0.0', port=10000)

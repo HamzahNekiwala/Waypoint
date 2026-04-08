@@ -1,5 +1,11 @@
 {
+    "admin": {
+        "is_admin": true,
+        "itinerary": [],
+        "password": "admin"
+    },
     "gibran": {
+        "is_admin": false,
         "itinerary": [
             {
                 "attractions": [
@@ -51,9 +57,43 @@
                 "seat_surcharge": 45,
                 "total_price": 1077
             }
-        ]
+        ],
+        "password": "123"
+    },
+    "malik": {
+        "is_admin": false,
+        "itinerary": [
+            {
+                "attractions": [
+                    {
+                        "attraction_id": "ATR-LON-THAMES-c",
+                        "end": "2026-06-25T19:30",
+                        "name": "Thames Evening Cruise",
+                        "price": 42,
+                        "session_id": "S-LON-TH-c-1",
+                        "start": "2026-06-25T18:00"
+                    }
+                ],
+                "attractions_total": 42,
+                "date": "2026-06-25",
+                "destination": "London",
+                "flight_base_price": 480,
+                "flight_id": "F-LON-03",
+                "flight_seat": "5B",
+                "hotel_id": "H-LON-03",
+                "hotel_room_beds": "1 King",
+                "hotel_room_id": "H-LON-03-R45",
+                "hotel_room_price": 210,
+                "hotel_room_type": "Executive",
+                "seat_surcharge": 0,
+                "total_price": 732
+            }
+        ],
+        "password": "123"
     },
     "test_guest": {
-        "itinerary": []
+        "is_admin": false,
+        "itinerary": [],
+        "password": "123"
     }
 }

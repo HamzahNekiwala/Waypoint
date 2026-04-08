@@ -133,9 +133,12 @@
                     <span class="label">Total</span>
                     <span class="total-price">${{ trip.total_price }}</span>
                 </div>
-                <form method="POST" action="/cancel/{{ username }}/{{ trip.trip_index }}">
-                    <button type="submit" class="btn btn-primary" style="margin-top:1rem;">Cancel Booking</button>
-                </form>
+                <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;">
+                    <a href="/export/{{ username }}/{{ trip.trip_index }}" class="btn btn-gold" style="text-align: center;">Export as PDF</a>
+                    <form method="POST" action="/cancel/{{ username }}/{{ trip.trip_index }}">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Cancel Booking</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

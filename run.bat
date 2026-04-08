@@ -20,6 +20,15 @@ if errorlevel 1 (
     echo Flask is already installed.
 )
 echo.
+echo Checking reportlab installation...
+pip show reportlab >nul 2>&1
+if errorlevel 1 (
+    echo reportlab not found. Installing reportlab...
+    pip install reportlab
+) else (
+    echo reportlab is already installed.
+)
+echo.
 echo Starting Waypoint server...
 echo Open your browser and go to: http://127.0.0.1:5000
 echo Press CTRL+C to stop the server.

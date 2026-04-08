@@ -273,7 +273,7 @@
                     "end": "2026-06-25T19:30",
                     "id": "S-LON-TH-c-1",
                     "price": 42,
-                    "spots_left": 40,
+                    "spots_left": 39,
                     "start": "2026-06-25T18:00"
                 },
                 {
@@ -868,7 +868,9 @@
                 "1A",
                 "6D"
             ],
-            "booked_seats": [],
+            "booked_seats": [
+                "5B"
+            ],
             "date": "2026-06-25",
             "destination": "London",
             "id": "F-LON-03",
@@ -2101,7 +2103,7 @@
                     "type": "Corner Studio"
                 },
                 {
-                    "available": true,
+                    "available": false,
                     "beds": "1 King",
                     "floor": 4,
                     "id": "H-LON-03-R45",
