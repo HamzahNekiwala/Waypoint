@@ -876,5 +876,5 @@ def cancel_booking(username, trip_index=None):
     return redirect(url_for("show_itinerary", username=username))
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=10000)
