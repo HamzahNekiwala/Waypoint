@@ -718,7 +718,7 @@
                     "end": "2026-09-24T19:00",
                     "id": "S-AMS-C-c-3",
                     "price": 22,
-                    "spots_left": 40,
+                    "spots_left": 39,
                     "start": "2026-09-24T18:00"
                 }
             ]
@@ -1095,7 +1095,9 @@
                 "1A",
                 "6D"
             ],
-            "booked_seats": [],
+            "booked_seats": [
+                "6B"
+            ],
             "date": "2026-09-24",
             "destination": "Amsterdam",
             "id": "F-AMS-03",
@@ -3624,7 +3626,7 @@
                     "type": "Standard Twin"
                 },
                 {
-                    "available": true,
+                    "available": false,
                     "beds": "1 King",
                     "floor": 5,
                     "id": "H-AMS-03-R53",

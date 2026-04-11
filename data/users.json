@@ -4,6 +4,37 @@
         "itinerary": [],
         "password": "admin"
     },
+    "ayan": {
+        "is_admin": false,
+        "itinerary": [
+            {
+                "attractions": [
+                    {
+                        "attraction_id": "ATR-AMS-CANAL-c",
+                        "end": "2026-09-24T19:00",
+                        "name": "Canal Cruise Classic",
+                        "price": 22,
+                        "session_id": "S-AMS-C-c-3",
+                        "start": "2026-09-24T18:00"
+                    }
+                ],
+                "attractions_total": 22,
+                "date": "2026-09-24",
+                "destination": "Amsterdam",
+                "flight_base_price": 580,
+                "flight_id": "F-AMS-03",
+                "flight_seat": "6B",
+                "hotel_id": "H-AMS-03",
+                "hotel_room_beds": "1 King",
+                "hotel_room_id": "H-AMS-03-R53",
+                "hotel_room_price": 240,
+                "hotel_room_type": "Deluxe King",
+                "seat_surcharge": 0,
+                "total_price": 842
+            }
+        ],
+        "password": "123"
+    },
     "gibran": {
         "is_admin": false,
         "itinerary": [
