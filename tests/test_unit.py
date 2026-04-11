@@ -19,10 +19,14 @@ class TestWaypointUnit(unittest.TestCase):
         self.assertTrue(mock_file.called)
 
     # UT-03-OB: Testing Login Logic
-    def test_login_normalization(self):
+    @patch("app.load_data")
+    def test_login_normalization(self, mock_load):
         # Testing that "  User123  " becomes "user123"
-        with app.app.test_request_context(method='POST', data={'username': '  User123  '}):
-            response = app.login()
+        users = {"user123": {"password": "123", "is_admin": False, "itinerary": []}}
+        mock_load.return_value = users
+
+        with app.app.test_request_context(method='POST', data={'username': '  User123  ', 'password': '123'}):
+            response = app.handle_login()
             # Checks if the redirect URL contains the lowercase, stripped name
             self.assertIn('user123', response.location)
 
