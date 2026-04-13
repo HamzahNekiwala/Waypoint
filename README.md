@@ -56,16 +56,18 @@
 3. run `app.py` then visit http://127.0.0.1:10000 to access and use Waypoint on your machiene
 
 ---
-## Directory Setup
 
+## Project Structure
+
+```text
 Waypoint/
-├── app.py              # Flask Application & Routing Logic
-├── data/               
-│   ├── catalog.json    # Internal Travel Database
-│   └── users.json      # Persistent User Itineraries
-├── static/             # CSS and Assets
-├── templates/          # Jinja2 HTML Templates (index, book, itinerary, etc.)
-└── tests/              # Automated Test Suite (Unit, Integration, System)
+├── app.py                 # Flask application & routing logic
+├── data/
+│   ├── catalog.json       # internal travel database
+│   └── users.json         # persistent user itineraries
+├── templates/             # Jinja2 HTML templates
+└── tests/                 # automated test suite (unit, integration, system)
+```
 
 ---
 
