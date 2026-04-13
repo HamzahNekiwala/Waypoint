@@ -20,7 +20,9 @@
 
 * **Persistent Authentication:** Users log in with a username to save their specific itinerary to a persistent JSON file.
 * **Dependent Search Logic:** A smart search system where flight choices automatically filter available hotel dates (and vice-versa) to ensure itinerary alignment.
-* **Internal Data Catalog:** A curated internal JSON database ensures 100% uptime and a predictable testing environment.
+* **Internal Data Catalog:** A curated internal JSON database ensures 100%
+
+ uptime and a predictable testing environment.
 * **Itinerary Management:** A centralized view that summarizes all booked items in one list.
 
 ---
@@ -55,4 +57,5 @@ Waypoint is designed to be intuitive. Follow these steps to plan your trip:
 6.  **Manage Itinerary:** At the end of the session, you can choose to view your **Past Catalog** to see all previously saved trips and itineraries.
 
 ## Live Demo Of Waypoint (https://waypoint-cauu.onrender.com/)
+
 
