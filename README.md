@@ -54,5 +54,5 @@ Waypoint is designed to be intuitive. Follow these steps to plan your trip:
 5.  **View Your "Ticket":** Once selected, the system generates a summary "Ticket" showing your destination, flight ID, hotel ID, and total trip cost.
 6.  **Manage Itinerary:** At the end of the session, you can choose to view your **Past Catalog** to see all previously saved trips and itineraries.
 
-## Live Demo Of Waypoint ([https://waypoint-cauu.onrender.com/](url))
+## Live Demo Of Waypoint (https://waypoint-cauu.onrender.com/)
 
