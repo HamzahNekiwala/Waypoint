@@ -4,6 +4,7 @@
 
 ## Live Demo
 * **Web Application:** [https://waypoint-cauu.onrender.com/](https://waypoint-cauu.onrender.com/)
+* Note: Web app may take upto 1 minute to start up after inactivity
 * **Video Walkthrough:** [YouTube Live Demo](https://www.youtube.com/watch?v=r7pycvvv7OQ)
 ---
 
