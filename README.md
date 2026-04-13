@@ -57,5 +57,5 @@ Waypoint is designed to be intuitive. Follow these steps to plan your trip:
 6.  **Manage Itinerary:** At the end of the session, you can choose to view your **Past Catalog** to see all previously saved trips and itineraries.
 
 ## Live Demo Of Waypoint (https://waypoint-cauu.onrender.com/)
-
+* **Live Demo Youtube Link (https://www.youtube.com/watch?v=r7pycvvv7OQ)**
 
